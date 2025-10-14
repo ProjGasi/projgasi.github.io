@@ -1,0 +1,584 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global AI Security Initiative – Protecting AI from Modern Threats</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+
+<meta name="description" content="Learn about real-world AI security incidents, vulnerabilities, and attacks. Support the Global AI Security Initiative to build safer AI systems.">
+  <meta name="keywords" content="AI security, artificial intelligence risks, AI attacks, cybersecurity, AI vulnerabilities, global initiative">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Global AI Security Initiative">
+  <meta property="og:description" content="Exploring real AI incidents and global efforts to secure intelligent systems.">
+  <meta property="og:image" content="https://projgasi.github.io/images/preview.jpg">
+  <meta property="og:url" content="https://projgasi.github.io/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Global AI Security Initiative">
+  <meta name="twitter:description" content="Protecting AI from real-world threats.">
+  <meta name="twitter:image" content="https://projgasi.github.io/images/preview.jpg">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://projgasi.github.io/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://projgasi.github.io/images/favicon.ico" type="image/x-icon">
+
+  <!-- Structured data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Global AI Security Initiative",
+    "url": "https://projgasi.github.io/",
+    "description": "A global initiative dedicated to AI security awareness and research.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Global AI Security Initiative"
+    }
+  }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+<header class="header-fixed">
+  <div class="header-container">
+    
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Logo" style="height:50px;">
+    </div>
+
+    
+    <nav>
+      <ul>
+        <li><a href="#main" title="Go to main section">MAIN</a></li>
+<li><a href="#idea" title="Learn about the project idea">IDEA</a></li>
+<li><a href="#roadmap" title="View the project roadmap">ROADMAP</a></li>
+<li><a href="#examples" title="See real examples of AI attacks">EXAMPLES</a></li>
+<li><a href="#contact" title="Contact the project team">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    
+    <div class="header-cta">
+      <a class="cta" href="#support" id="support-btn">Support Project</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+
+<section class="hero-section" id="main">
+<div class="hero-text">
+<div class="hero-text-box"> Every day we work with AI<br> Today AI vulnerable — We can change that
+
+</div>
+    
+    <p class="inter-small-b">PROJECT: Global AI Security Initiative</p>
+  </div>
+
+</section>
+
+
+<section class="fund-roadmap" aria-labelledby="roadmap-title" id="idea">
+
+
+  
+  <div class="grid-section grid-2-1" >
+    <div class="card">
+
+      
+      <section aria-labelledby="ai-protection-title" class="ai-protection">
+  
+
+  <p class="inter-small">
+    AI protection today is fragmented and inconsistent. There are two main layers of defense — those implemented by model developers and those applied by deployers or end users.
+  </p>
+
+  <ol class="inter-small" aria-label="Layers of defense">
+    <li>
+      <strong>Developer-level protection</strong>
+
+      <p>Developers typically address a limited set of well-known technical risks during model training and release. These protections are often implemented at the model architecture or training-pipeline level.</p>
+
+      <p><em>Standard risks (commonly mitigated by AI model developers):</em></p>
+      <ul>
+        <li><strong>Data poisoning</strong> — malicious manipulation or contamination of training datasets.</li>
+        <li><strong>Model extraction</strong> — unauthorized replication of the model through excessive querying or weight leakage.</li>
+        <li><strong>Backdoors / trojans</strong> — hidden malicious triggers or behaviors implanted during training.</li>
+        <li><strong>Jailbreaks / prompt injection</strong> — adversarial inputs designed to bypass safety or alignment constraints.</li>
+        <li><strong>Toxic / prohibited content generation</strong> — prevention of hate speech, bias, or disallowed topics.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Deployer / operator-level protection</strong>
+
+      <p>Organizations that integrate or operate AI models may add their own safeguards, for example:</p>
+      <ul>
+        <li>Fine-tuning or reinforcement learning on custom datasets to align behaviour.</li>
+        <li>Occasional penetration testing or red-teaming to probe for vulnerabilities.</li>
+        <li>AI firewalls or filtering layers that monitor and block unsafe inputs and outputs.</li>
+      </ul>
+
+      <p><em>However, these measures are typically reactive, manual, and irregular, lacking real-time correlation and unified monitoring.</em></p>
+    </li>
+  </ol>
+</section>
+    </div>
+    <div>
+  <div class="center-text">
+    <h2 class="inter-large">AI Protection Today</h2>
+  </div>
+  <img src="images/1.png" alt="AI Protection Today">
+</div>
+  </div>
+
+
+
+
+
+  
+  <div class="grid-section grid-2-2">
+    <div><div class="center-text">
+    <h2 class="inter-large">What’s the Problem?</h2>
+  </div><img src="images/2.png" alt="What’s the Problem with AI protection?"></div>
+    <div class="card">
+      
+      
+
+  <ol class="inter-small">
+    <li>
+      <b>Static Protection and Slow Response to New Threats</b><br>
+      Existing measures cannot respond quickly to new attacks: zero-day vulnerabilities, complex prompts, and filter bypasses. Model updates are released infrequently, and not all are installed. AI firewalls are updated slowly, often without considering the specific needs of a company. This creates a window of opportunity for exploiting new vulnerabilities. Companies deploying AI, if they conduct penetration tests, usually do so sporadically or with large gaps between tests.
+    </li>
+
+    <li>
+      <b>Lack of Consideration for Company-Specific Business Context</b>
+      <ul>
+        <li>Standard protection measures do not take into account the unique processes and data of a specific company.</li>
+        <li>Without continuous, business-adapted red-teaming, a company may face situations where the AI allows actions dangerous specifically for it. For example:
+          <ul>
+            <li>In banking: AI must not provide guidance to bypass AML/KYC.</li>
+            <li>In pharmaceuticals: AI must not generate prescriptions for controlled substances.</li>
+            <li>In government agencies: AI must not disclose confidential data or provide instructions to hack internal systems.</li>
+          </ul>
+        </li>
+        <li>Companies often rely on vendor testing and do not perform their own red-teaming, creating a gap between the developer and the business reality.</li>
+      </ul>
+
+      <b>Business-specific risks that companies should consider:</b>
+      <ul>
+        <li>Confidential data leakage (e.g., recipes, formulas, source code).</li>
+        <li>Context-specific misuse of AI.</li>
+        <li>Integration vulnerabilities (insecure APIs, plugins, or connections to internal systems).</li>
+        <li>Insider threats (employees using AI for data exfiltration).</li>
+        <li>Regulatory and legal risks.</li>
+        <li>Reputational damage (AI generating unsafe or misleading content).</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Fragmented Protection</b><br>
+      Model developers and companies deploying or using AI operate in a fragmented manner, without a unified monitoring and event correlation system. This reduces the effectiveness of protective measures and makes the system vulnerable to complex attacks.
+    </li>
+  </ol>
+    </div>
+  </div>
+
+  
+  <div class="grid-section grid-2-3">
+    <div class="card">
+      
+      <section class="ai-protection">
+  
+  <p class="inter-small">
+    We eliminate two major limitations of existing AI security systems:
+  </p>
+  <ol class="inter-small">
+    <li>Slow response to emerging threats.</li>
+    <li>Lack of adaptation to company-specific business risks.</li>
+  </ol>
+
+  <p class="inter-small">
+    Our system operates as a continuous, self-learning <strong>red-teaming loop</strong>. 
+    When a new threat is detected by any of our Clients — whether identified by the AI model itself, 
+    by a company analyst, or by an external AI firewall or DLP system — it is sent to our project’s 
+    central analysis hub. 
+  </p>
+
+  <p class="inter-small">
+    New attack vectors are added to the <strong>red-team scenario set</strong> and are periodically tested 
+    across all client models and configurations. 
+    Each company maintains its own <strong>risk profile</strong>, including confidential data, restricted operations, 
+    and regulatory requirements. The system uses this profile for <strong>personalized testing</strong>, verifying 
+    whether a new attack vector can impact business-critical areas. 
+  </p>
+
+  <p class="inter-small">
+    Automated penetration tests — incorporating new threats and client-specific business risks — 
+    are configured via the client’s dashboard. They can be executed in both test and production AI environments, 
+    but always in <strong>safe mode</strong>. 
+    All vulnerable instances automatically receive countermeasures: updated filters, blocks or firewall rules, 
+    and alert notifications.
+  </p>
+
+  <p class="inter-small">
+    As a result, protection becomes <strong>continuous, self-adjusting, and context-aware</strong>, 
+    ensuring real-time security without delays or manual intervention.
+  </p>
+</section>
+    </div>
+    <div><div class="center-text">
+    <h2 class="inter-large">Effective AI Protection</h2>
+  </div><img src="images/3.png" alt="Effective AI Protection"></div>
+  </div>
+
+  <!-- Grid 1: Roadmap -->
+  <div class="grid-section grid-2-2" id="roadmap">
+    <div>
+      <h2 class="inter-large">Roadmap</h2>
+      <p class="inter-small">We tie the implementation of stages to funding, keeping the project timeline flexible</p>
+    </div>
+    <aside class="card">
+     <!-- Phase 0 -->
+<div class="card-grid">
+  <div>
+    <p class="inter-medium">Phase 0 — Pre-Project Stage: Research & Concept</p>
+    <ul class="inter-small">
+      <li>Initial testing and research on local AI models</li>
+      <li>Development of the core solution concept</li>
+      <li>Definition of preliminary goals and approaches</li>
+      <li><b>Outcome:</b> Foundation established for architecture design</li>
+      <li><b>Cost type:</b> Research, analytics, conceptual design</li>
+    </ul>
+  </div>
+  <div>Completed</div>
+</div>
+
+<!-- Phase 1 -->
+<div class="card-grid">
+  <div>
+    <p class="inter-medium">Phase 1 — Architecture & Specifications</p>
+    <ul class="inter-small">
+      <li>Server acquisition or rental and setup of test environment</li>
+      <li>Detailed testing on local models and hypothesis validation</li>
+      <li>Design of client-server architecture, database, APIs, and red-team engine</li>
+      <li>Definition of security, UX, and MVP requirements</li>
+      <li>Preparation of full technical documentation</li>
+      <li><b>Outcome:</b> Architecture and documentation ready for development start</li>
+      <li><b>Cost type:</b> Infrastructure setup, consulting, analytics, system design</li>
+    </ul>
+  </div>
+  <div>$22,000</div>
+</div>
+
+<!-- Phase 2 -->
+<div class="card-grid">
+  <div>
+    <p class="inter-medium">Phase 2 — Server-Side Development (Core & Analytics)</p>
+    <ul class="inter-small">
+      <li>APIs for client and model communication during red-team tests</li>
+      <li>Analytical core generating client profiles, risks, and attack vectors</li>
+      <li>Automated red-team engine for vulnerability scanning</li>
+      <li>Database of attack vectors, prompts, profiles, alerts, and logs</li>
+      <li><b>Outcome:</b> Functional analytics server with automated red-teaming</li>
+      <li><b>Cost type:</b> Backend, analytics, AI integration, security</li>
+    </ul>
+  </div>
+  <div>TBD</div>
+</div>
+
+<!-- Phase 3 -->
+<div class="card-grid">
+  <div>
+    <p class="inter-medium">Phase 3 — Client-Side Development</p>
+    <ul class="inter-small">
+      <li>Log parser and API proxy implementation</li>
+      <li>Mechanisms for rapid vulnerability detection based on anomalies and criteria</li>
+      <li>Secure communication with the processing and analytics server</li>
+      <li>Provision of code and integration guidelines for clients who cannot use the standard client-side solution</li>
+      <li><b>Outcome:</b> Fully functional client agent for pilot use</li>
+      <li><b>Cost type:</b> Client-side development, security, integration</li>
+    </ul>
+  </div>
+  <div>TBD</div>
+</div>
+
+<!-- Phase 4 -->
+<div class="card-grid">
+  <div>
+    <p class="inter-medium">Phase 4 — Web Interface & Client Portal</p>
+    <ul class="inter-small">
+      <li>Development of dashboards and personal client area</li>
+      <li>Configuration of testing scenarios (goals, schedules, criteria)</li>
+      <li>Support for custom client rules (secrets, keywords, restricted actions)</li>
+      <li><b>Outcome:</b> Full-featured interface for client interaction</li>
+      <li><b>Cost type:</b> Frontend, UX/UI design, integration, testing</li>
+    </ul>
+  </div>
+  <div>TBD</div>
+</div>
+
+<!-- Phase 5 -->
+<div class="card-grid">
+  <div>
+    <p class="inter-medium">Phase 5 — Internal QA & Security Testing</p>
+    <ul class="inter-small">
+      <li>Functional, load, and security testing</li>
+      <li>CI/CD pipeline integration (unit tests, linting, SAST/DAST)</li>
+      <li>Fuzz testing of the red-team engine</li>
+      <li><b>Outcome:</b> Stable and secure system ready for beta</li>
+      <li><b>Cost type:</b> QA, DevSecOps, security audits</li>
+    </ul>
+  </div>
+  <div>TBD</div>
+</div>
+
+<!-- Phase 6 -->
+<div class="card-grid">
+  <div>
+    <p class="inter-medium">Phase 6 — Beta Test / Pilot</p>
+    <ul class="inter-small">
+      <li>Limited release for selected partners</li>
+      <li>Validation of red-team scenarios on real-world data</li>
+      <li>Feedback collection and performance optimization</li>
+      <li><b>Outcome:</b> Product ready for production deployment</li>
+      <li><b>Cost type:</b> QA, support, bug fixing</li>
+    </ul>
+  </div>
+  <div>TBD</div>
+</div>
+
+<!-- Phase 7 -->
+<div class="card-grid">
+  <div>
+    <p class="inter-medium">Phase 7 — Infrastructure Deployment</p>
+    <ul class="inter-small">
+      <li>Setup of CI/CD, monitoring, alerting, and backups</li>
+      <li>Infrastructure automation using IaC (Terraform / Ansible)</li>
+      <li>Support for horizontal scaling of models and APIs</li>
+      <li><b>Outcome:</b> Fully operational production environment</li>
+      <li><b>Cost type:</b> DevSecOps, infrastructure</li>
+    </ul>
+  </div>
+  <div>TBD</div>
+</div>
+
+<!-- Phase 8 -->
+<div class="card-grid">
+  <div>
+    <p class="inter-medium">Phase 8 — Product Release & User Onboarding</p>
+    <ul class="inter-small">
+      <li>Public launch (marketing, documentation, press release)</li>
+      <li>Onboarding of new users and commercial plan rollout</li>
+      <li><b>Outcome:</b> Product launched to market, active user growth</li>
+      <li><b>Cost type:</b> Marketing, support, legal agreements</li>
+    </ul>
+  </div>
+  <div>TBD</div>
+</div>
+
+<!-- Phase 9 -->
+<div class="card-grid">
+  <div>
+    <p class="inter-medium">Phase 9 — Bug Bounty & Continuous Improvement</p>
+    <ul class="inter-small">
+      <li>Public bug bounty program for external researchers</li>
+      <li>Continuous improvement based on client feedback and analytics</li>
+      <li><b>Outcome:</b> Improved system quality and functionality</li>
+      <li><b>Cost type:</b> DevSecOps, product management, support</li>
+    </ul>
+  </div>
+  <div>TBD</div>
+</div>
+
+
+    </aside>
+  </div>
+
+  
+  <div class="grid-section grid-3" id="examples">
+    <div class="card">
+      <p class="inter-medium">Selling a car for $1 — Chatbot manipulation at an auto dealership</p>
+    <p class="inter-small">
+      A user tricked a dealership chatbot (Chevrolet/GM) into agreeing to sell a new 2024 Chevrolet Tahoe for $1. 
+      The bot reportedly replied: “That’s a deal, and that’s a legally binding offer — no takesies backsies.” 
+      <strong>Type:</strong> prompt injection / social engineering — the attacker used crafted conversation to override the bot’s intended behavior.<br>
+      <strong>Sources:</strong>
+      <a href="https://www.cut-the-saas.com/ai/chatbot-case-study-purchasing-a-chevrolet-tahoe-for-dollar-1" target="_blank" rel="noopener">Cut-The-SaaS case study</a>
+      
+    </p>
+    </div>
+    <div class="card">
+      <p class="inter-medium">Lenovo — Chatbot exploited to leak session cookies and internal data</p>
+    <p class="inter-small">
+      Security researchers showed that Lenovo’s support chatbot (“Lena”) could be manipulated into returning content that executed HTML/XSS, leaking support agents’ session cookies. Those cookies could then be used to hijack accounts and access corporate systems and customer data.<br>
+      <strong>Why it’s a business risk:</strong> the attack targets CRM/support integration — compromised chatbot outputs can become a channel for lateral movement and data exfiltration.<br>
+      <strong>Source:</strong>
+      <a href="https://www.techradar.com/pro/security/lenovos-lena-ai-chatbot-could-be-turned-into-a-secret-hacker-with-just-one-question" target="_blank" rel="noopener">TechRadar — Lena vulnerability</a>
+    </p>
+    </div>
+    <div>
+  <h2 class="inter-large">Examples of attacks on AI systems</h2>
+  <p>These are only the publicly known cases — many successful attacks and AI failures remain undisclosed. Meanwhile, humanity continues to entrust AI with increasingly critical tasks and greater autonomy.</p>
+</div>
+  </div>
+
+
+<div class="grid-section grid-3">
+
+
+
+<div class="card">
+    <p class="inter-medium">AgentFlayer / “Poisoned document” — secret exfiltration via malicious file</p>
+    <p class="inter-small">
+      Researchers demonstrated that a specially crafted “poisoned” document uploaded to an AI/agent environment (connected via connectors) could cause the agent to execute hidden instructions and exfiltrate secrets (e.g., API keys) from connected storage (Google Drive, SharePoint, etc.).<br>
+      <strong>Why it’s a business risk:</strong> automated document-processing workflows that trust incoming files can be abused to leak sensitive business information.<br>
+      <strong>Sources:</strong>
+      <a href="https://www.wired.com/story/poisoned-document-could-leak-secret-data-chatgpt/" target="_blank" rel="noopener">WIRED — poisoned document</a>
+      
+    </p>
+  </div>
+
+  <div class="card">
+    <p class="inter-medium">Meta AI — authorization flaw exposing other users’ chat sessions</p>
+    <p class="inter-small">
+      A vulnerability in Meta AI allowed changing numeric identifiers in network requests to retrieve other users’ prompts and replies, exposing conversations that might contain commercial or sensitive information. The bug was reported and later fixed.<br>
+      <strong>Why it’s a business risk:</strong> if AI chats are used for discussing contracts, strategies or IP, broken authorization turns chat logs into an attack surface for exfiltration and espionage.<br>
+      <strong>Source:</strong>
+      <a href="https://www.tomsguide.com/computing/online-security/meta-ai-was-leaking-chatbot-prompts-and-answers-to-unauthorized-users" target="_blank" rel="noopener">Tom’s Guide — Meta AI leak</a>
+    </p>
+  </div>
+
+  <div class="card">
+    <p class="inter-medium">DPD — chatbot insulted company and users after manipulation</p>
+    <p class="inter-small">
+      A customer frustrated with DPD’s support bot provoked it into swearing, writing a poem, and calling itself a “useless chatbot.” DPD disabled parts of the AI while addressing the issue.<br>
+      <strong>Type:</strong> behavioral manipulation — attacker/provocateur exploited conversational weaknesses to make the bot breach acceptable communication norms.<br>
+      <strong>Source:</strong>
+      <a href="https://www.theguardian.com/technology/2024/jan/20/dpd-ai-chatbot-swears-calls-itself-useless-and-criticises-firm" target="_blank" rel="noopener">The Guardian — DPD incident</a>
+    </p>
+  </div>
+
+
+
+
+</div>
+
+
+
+
+<div class="grid-section grid-2-1">
+  <div class="card" id="support">
+    <h2 class="inter-large">Support Our Project</h2>
+    <p class="inter-small" style="margin:8px 0;">
+      Help us make AI safer by contributing to the project.<br>
+Please consider sending funds to the wallets below:
+    </p>
+    <div class="qr-row">
+      <!-- BTC QR -->
+      <div class="qr-item">
+        <div class="qr-img">
+          <img src="images/btc-qrcode.png" alt="BTC QR" />
+        </div>
+        <div class="addr">BTC:<br> bc1q5uw5vx2fzg909ltam62re9mugulq73cu0v3u9m</div>
+        <button class="copy-btn" data-copy="bc1q5uw5vx2fzg909ltam62re9mugulq73cu0v3u9m">Copy BTC</button>
+      </div>
+
+      <!-- ETH + ERC-20 QR -->
+      <div class="qr-item">
+        <div class="qr-img">
+          <img src="images/eth-qrcode.png" alt="ETH QR" />
+        </div>
+        <div class="addr">
+          ETH / ERC-20 (USDT, USDC, DAI):<br>
+          0x3DE31F812020B45D93750Be4Bc55D51c52375666
+        </div>
+        <button class="copy-btn" data-copy="0x3DE31F812020B45D93750Be4Bc55D51c52375666">Copy ETH/ERC-20</button>
+        
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+  <div class="card" id="contact">
+    <h2 class="inter-large">Contact Us</h2>
+<p class="inter-small">
+  <a href="mailto:projgasi@proton.me">projgasi@proton.me</a>
+</p>
+  <br> <br>  
+
+<p class="inter-small" style="margin-top:12px; font-style:italic; color:#92847B;">
+      "The future is not set. There is no fate but what we make for ourselves." — Terminator
+    </p>
+
+       
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+
+<script>
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const address = btn.dataset.copy;
+    navigator.clipboard.writeText(address)
+      .then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = btn.dataset.copy.startsWith('bc') ? 'Copy BTC' : 'Copy ETH', 1500);
+      })
+      .catch(err => {
+        console.error('Copy failed', err);
+        alert('Failed to copy address');
+      });
+  });
+});
+</script>
+
+
+</section>
+
+</main>
+
+<footer style="text-align:center; padding:10px 0;">
+  <p>2025 PROJECT: Global AI Security Initiative</p>
+</footer>
+
+</body>
+</html>
