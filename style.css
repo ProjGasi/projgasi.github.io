@@ -9,7 +9,7 @@
       --max-width: 1200px;
 
       --font-large-size: 38px;
-      --font-medium-size: 24px;
+      --font-medium-size: 22px;
       --font-small-size: 16px;
       --color-dark: #92847B;
       --color-muted: #9aa0a6;
@@ -23,7 +23,7 @@ font-family: 'Poppins', sans-serif;
       background: #f9f9f9;
     }
 
- #main, #idea, #roadmap, #support, #contact, #examples {
+ #main, #idea, #roadmap, #support, #contact, #examples, #news {
   scroll-margin-top: 70px;
 }   
 
@@ -176,21 +176,22 @@ body {
     .grid-2-2 { grid-template-columns: 400px 1fr; }
     .grid-2-3 { grid-template-columns: 1fr 560px; }
     .grid-3   { grid-template-columns: repeat(3, 1fr); }
+	.grid-2-4 { grid-template-columns: 200px 1fr; }
 
     @media (max-width: 900px) {
-      .grid-2-1, .grid-2-2, .grid-2-3, .grid-3 { grid-template-columns: 1fr; }
+      .grid-2-1, .grid-2-2, .grid-2-3, .grid-2-4, .grid-3 { grid-template-columns: 1fr; }
     }
 
 @media (max-width: 960px) {
   
 
   
-  .grid-2-1 h2, .grid-2-2 h2, .grid-2-3 h2, .grid-3 h2 {
+  .grid-2-1 h2, .grid-2-2 h2, .grid-2-3 h2, .grid-2-4 h2, .grid-3 h2 {
     font-size: 24px; 
   }
 
   
-  .grid-2-1 p, .grid-2-2 p, .grid-2-3 p, .grid-3 p {
+  .grid-2-1 p, .grid-2-2 p, .grid-2-3 p, .grid-2-4 p, .grid-3 p {
     font-size: 14px;
   }
 }
@@ -200,12 +201,12 @@ body {
   
 
   
-  .grid-2-1 h2, .grid-2-2 h2, .grid-2-3 h2, .grid-3 h2 {
+  .grid-2-1 h2, .grid-2-2 h2, .grid-2-3 h2, .grid-2-4 h2, .grid-3 h2 {
     font-size: 18px; 
   }
 
   
-  .grid-2-1 p, .grid-2-2 p, .grid-2-3 p, .grid-3 p {
+  .grid-2-1 p, .grid-2-2 p, .grid-2-3 p, .grid-2-4 p, .grid-3 p {
     font-size: 10px;
   }
 }
@@ -288,8 +289,27 @@ margin-bottom: 40px;
 }
 
 
+.news-cards .card {
+  display: none; 
+  margin-bottom: 20px;
+}
+.pagination-controls { display: flex; gap: 10px; margin-top: 10px; }
 
 
+
+.pagination-controls button {
+  padding: 8px 16px;
+  cursor: pointer;
+  color: var(--color-dark);  
+  background: #fff;           
+  border: 1px solid var(--color-dark); 
+  border-radius: 4px;         
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;               
+  cursor: default;
+}
 
 
 

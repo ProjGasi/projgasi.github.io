@@ -80,6 +80,7 @@
 <li><a href="#idea" title="Learn about the project idea">IDEA</a></li>
 <li><a href="#roadmap" title="View the project roadmap">ROADMAP</a></li>
 <li><a href="#examples" title="See real examples of AI attacks">EXAMPLES</a></li>
+<li><a href="#news" title="News and updates">NEWS</a></li>
 <li><a href="#contact" title="Contact the project team">CONTACT</a></li>
       </ul>
     </nav>
@@ -492,8 +493,96 @@
 
 </div>
 
+  <div class="grid-section grid-2-4" id="news">
+   <div>
+  <h2 class="inter-large">News</h2>
+  <p>News and updates about our project</p>
 
 
+<div class="pagination-controls">
+    <button class="prev-btn">Previous</button>
+    <button class="next-btn">Next</button>
+  </div>
+
+
+</div> 
+
+
+
+
+
+<div class="news-cards">
+
+
+
+<div class="card">
+
+<p class="inter-medium">October 16, 2025 — Project launch on Product Hunt</p>
+    <p class="inter-small">
+      We’ve officially launched on Product Hunt! Discover our project, share feedback, and support the release as we open it to a wider tech community for the first time.
+
+    <a href="https://www.producthunt.com/products/collaborative-ai-red-team-platform?launch=collaborative-ai-red-team-platform" target="_blank" rel="noopener">Product Hunt</a>  
+    </p>
+
+
+</div>
+
+<div class="card">
+      <p class="inter-medium">October 14, 2025 — Project release on the Web</p>
+    <p class="inter-small">
+      The official project website is now live. Users can explore product details, roadmap, and updates directly online — marking our first public web release.
+      
+    </p>
+    
+</div>
+
+<div class="card">
+ <p class="inter-medium">October 10, 2025 — AI security concept and roadmap defined</p>
+    <p class="inter-small">
+      Following consultations with leading AI and cybersecurity experts, we explored strategies for effective AI protection. Based on the research results, a security framework and development roadmap were formed. This milestone concludes Phase 0 — Pre-Project Stage: Research & Concept, establishing a solid foundation for architecture design.
+      
+    </p>
+    
+</div>
+
+
+<div class="card"> 
+
+ <p class="inter-medium">September 26, 2025 — Security analysis and attack simulations</p>
+    <p class="inter-small">
+      Initial testing of local AI models began in March 2025 to assess system robustness and threat exposure. By late September, multiple attack vectors were simulated, including data-poisoning and prompt-injection scenarios. The study identified key vulnerabilities and produced insights that shaped the foundation of our global AI security architecture.
+    </p>
+  <br><br>  
+</div>
+
+
+
+
+
+
+
+
+ 
+  
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
 
 <div class="grid-section grid-2-1">
   <div class="card" id="support">
@@ -572,13 +661,94 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
 </script>
 
 
+
+
+<script>
+  const cards = Array.from(document.querySelectorAll('.news-cards .card'));
+const cardsPerPage = 4;
+let currentPage = 0;
+
+function showPage(page) {
+  const start = page * cardsPerPage;
+  const end = start + cardsPerPage;
+  
+  cards.forEach((card, index) => {
+    card.style.display = (index >= start && index < end) ? 'block' : 'none';
+  });
+
+  document.querySelector('.prev-btn').disabled = (page === 0);
+  document.querySelector('.next-btn').disabled = (end >= cards.length);
+}
+
+showPage(currentPage);
+
+document.querySelector('.prev-btn').addEventListener('click', () => {
+  if (currentPage > 0) {
+    currentPage--;
+    showPage(currentPage);
+  }
+});
+
+document.querySelector('.next-btn').addEventListener('click', () => {
+  if ((currentPage + 1) * cardsPerPage < cards.length) {
+    currentPage++;
+    showPage(currentPage);
+  }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </main>
 
 <footer style="text-align:center; padding:10px 0;">
   <p>2025 PROJECT: Global AI Security Initiative</p>
 </footer>
+
+
+
+
+
+
 
 </body>
 </html>
