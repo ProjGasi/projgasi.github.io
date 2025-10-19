@@ -18,7 +18,11 @@ You can view my learning achievements here:
 
 Here are some of my recent projects:
 
-- [AI Safety Project](https://projgasi.github.com/) — Tools and experiments to make AI safer, will be posted soon (october 2025)  
+- [Project GASI](https://projgasi.github.io/) — Global AI Security Initiative – Protecting AI from Modern Threats.
+Collaborative AI Red Team is a SaaS platform for collective AI security.
+Companies using AI can securely share discovered threats and vulnerabilities.
+The system aggregates these reports and automatically tests all participants against new attack vectors.
+The result — shared resilience, faster mitigation, and a global red team for AI defense. 
 
 
 ---
