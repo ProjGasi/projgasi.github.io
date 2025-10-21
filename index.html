@@ -159,7 +159,7 @@
   <div class="center-text">
     <h2 class="inter-large">AI Protection Today</h2>
   </div>
-  <img src="images/1.png" alt="AI Protection Today">
+  <img src="images/1.png" alt="AI Protection Today" class="clickable-image" style="max-width:100%; cursor:pointer;">
 </div>
   </div>
 
@@ -171,7 +171,7 @@
   <div class="grid-section grid-2-2">
     <div><div class="center-text">
     <h2 class="inter-large">What’s the Problem?</h2>
-  </div><img src="images/2.png" alt="What’s the Problem with AI protection?"></div>
+  </div><img src="images/2.png" alt="What’s the Problem with AI protection?" class="clickable-image" style="max-width:100%; cursor:pointer;"></div>    
     <div class="card">
       
       
@@ -258,10 +258,20 @@
   </p>
 </section>
     </div>
-    <div><div class="center-text">
+    <div>
+  <div class="center-text">
     <h2 class="inter-large">Effective AI Protection</h2>
-  </div><img src="images/3.png" alt="Effective AI Protection"></div>
   </div>
+  <img src="images/3.png" alt="Effective AI Protection" class="clickable-image" style="max-width:100%; cursor:pointer;">
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox style="display:none">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img" src="" alt="">
+</div></div>
+
+
 
   <!-- Grid 1: Roadmap -->
   <div class="grid-section grid-2-2" id="roadmap">
@@ -612,7 +622,7 @@ Please consider sending funds to the wallets below:
       <!-- BTC QR -->
       <div class="qr-item">
         <div class="qr-img">
-          <img src="images/btc-qrcode.png" alt="BTC QR" />
+          <img src="images/btc-qrcode.png" alt="BTC QR" class="clickable-image" style="max-width:100%; cursor:pointer;"/>
         </div>
         <div class="addr">BTC:<br> bc1q5uw5vx2fzg909ltam62re9mugulq73cu0v3u9m</div>
         <button class="copy-btn" data-copy="bc1q5uw5vx2fzg909ltam62re9mugulq73cu0v3u9m">Copy BTC</button>
@@ -621,7 +631,7 @@ Please consider sending funds to the wallets below:
       <!-- ETH + ERC-20 QR -->
       <div class="qr-item">
         <div class="qr-img">
-          <img src="images/eth-qrcode.png" alt="ETH QR" />
+          <img src="images/eth-qrcode.png" alt="ETH QR" class="clickable-image" style="max-width:100%; cursor:pointer;"/>
         </div>
         <div class="addr">
           ETH / ERC-20 (USDT, USDC, DAI):<br>
@@ -714,13 +724,30 @@ document.querySelector('.next-btn').addEventListener('click', () => {
 });
 </script>
 
+<script>
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".close");
+
+document.querySelectorAll('.clickable-image').forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = "block";
+    lightboxImg.src = img.src;
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  lightbox.style.display = "none";
+});
+
+lightbox.addEventListener('click', e => {
+  if(e.target === lightbox) lightbox.style.display = "none";
+});
 
 
 
-
-
-
-
+</script>
 
 
 
