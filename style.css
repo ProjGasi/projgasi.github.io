@@ -207,7 +207,7 @@ body {
 
   
   .grid-2-1 p, .grid-2-2 p, .grid-2-3 p, .grid-2-4 p, .grid-3 p {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
@@ -219,19 +219,35 @@ body {
 
 
 @media (max-width: 960px) {
-  .inter-small li {
+ .inter-small, 
+.inter-small li {
     font-size: 14px;
   }
 }
 
 
 @media (max-width: 500px) {
-  .inter-small li {
-    font-size: 10px;
+ .inter-small, 
+.inter-small li {
+    font-size: 12px;
   }
 }
 
 
+
+@media (max-width: 960px) {
+  .card p.inter-small, 
+  .card li.inter-small {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .card p.inter-small, 
+  .card li.inter-small {
+    font-size: 12px;
+  }
+}
 
 
 
