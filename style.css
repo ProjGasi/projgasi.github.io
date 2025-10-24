@@ -23,7 +23,7 @@ font-family: 'Poppins', sans-serif;
       background: #f9f9f9;
     }
 
- #main, #idea, #roadmap, #support, #contact, #examples, #news {
+ #main, #idea, #roadmap, #support, #contact, #examples, #news, .card {
   scroll-margin-top: 70px;
 }   
 
@@ -338,7 +338,7 @@ margin-bottom: 40px;
 }    
 
 
-.card-grid { display: grid; grid-template-columns: 1fr 100px; gap: 12px; margin-bottom: 12px; padding: 16px; }
+.card-grid { display: grid; grid-template-columns: 1fr 80px; gap: 12px; margin-bottom: 12px; padding: 16px; }
 
     h2, p { margin: 0; }
     p { line-height: 1.5; color: var(--muted); }

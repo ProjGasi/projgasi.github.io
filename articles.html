@@ -98,10 +98,165 @@
     <h2 class="inter-large">Articles</h2>
     <p class="lead">Insights, research updates, and development notes</p>
 
-    <div class="grid-section">
+    <div class="article-toc">
+  
+  <ul>
+    <li><a href="#ai-stuck-in-time">AI gets stuck in time</a></li>
+    <li><a href="#university-lectures">University Lectures as a New Source for Safe AI Training</a></li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+<div class="grid-section">
 
       <!-- Article 1 -->
-      <div class="card">
+      
+
+
+      <div class="card" id="ai-stuck-in-time">
+        <p class="inter-medium">AI gets stuck in time</p><br>
+
+<img src="images/stuckintime.jpg" alt="AI gets stuck in time" style="width:100%; margin:10px 0;"><br>
+
+        <p class="inter-medium">Everyone has faced it</p><br>
+
+        <p class="inter-small">
+            Almost everyone who has used artificial intelligence has encountered this scenario.
+            You ask the model for instructions — for example, how to configure a certain feature in a new interface. And it gives a confident answer:
+        </p>
+
+        <p class="inter-small"><em>“Go to section X, select option Y, and click Z.”</em></p><br>
+
+        <p class="inter-small">
+            You follow the instructions — and… nothing. The interface is different. Section X no longer exists.
+            You tell the AI that the instructions are outdated, and you get the usual response:
+        </p>
+
+        <p class="inter-small"><em>“It seems the interface has changed in the new version. Try to find something similar.”</em></p><br>
+
+        <p class="inter-small">
+            It sounds plausible, but in reality, this is a cop-out, hiding a fundamental problem: AI gets stuck in time.
+        </p><br>
+
+        <p class="inter-medium">Why this happens</p><br>
+
+        <p class="inter-small">
+            Modern language models are trained on enormous amounts of text — documentation, articles, forums, books. But all of this is static data collected at training time.
+            When you ask the AI a question, it looks for the answer inside its memory, i.e., from what it has already seen.
+        </p>
+
+        <p class="inter-small">
+            If the retrieval-augmented generation (RAG) mechanism is not used — the AI does not query external, up-to-date sources — the model simply “remembers” old information.
+            The interface has changed, but the model does not know.
+        </p>
+
+        <p class="inter-small">
+            The AI’s response is based on several layers of data, each with its own priority:
+        </p>
+
+        <ul class="inter-small">
+            <li><strong>Training data</strong> — the large dataset the model was trained on. Stable but can become outdated.</li>
+            <li><strong>RAG (retrieval of fresh data)</strong> — a dynamic layer where the AI can access external documents or databases.</li>
+            <li><strong>Prompt context</strong> — what you write at the moment.</li>
+            <li><strong>Internal generation</strong> — the AI’s own reasoning and guesses when real data is missing.</li>
+        </ul><br>
+
+        <p class="inter-small">
+            When RAG is not active, the AI relies on 1 and 4 — producing “instructions from the past,” even if they sound convincing.
+        </p><br>
+
+        <p class="inter-medium">Why RAG is not used for every request</p><br>
+
+        <p class="inter-small">
+            If the model has internet access, it seems logical to always check for fresh data.
+            But in practice, this is costly and slow:
+        </p>
+
+        <ul class="inter-small">
+            <li>it needs to formulate a search query,</li>
+            <li>analyze the pages it finds,</li>
+            <li>clean the text of irrelevant information,</li>
+            <li>structure the data,</li>
+            <li>and only then generate an answer.</li>
+        </ul><br>
+
+        <p class="inter-small">
+            This process takes more time and resources, especially under high query volume.
+            Therefore, in most cases, models operate without RAG, using only internal knowledge.
+            RAG is activated either by specific triggers (e.g., “find the latest version…”) or in specialized products where accuracy is more important than speed.
+        </p><br>
+
+        <p class="inter-medium">Possible solutions</p><br>
+
+        <p class="inter-small">
+            There are two main approaches:
+        </p>
+
+        <ol class="inter-small">
+            <li>Retrain the model frequently on fresh data. But this is expensive, technically complex, and still leaves a time lag between updates.</li>
+            <li>Use RAG more actively. The model does not need to “relearn” if it can simply access up-to-date documentation. For this, however, there must be an infrastructure where such data is available in a standardized format.</li>
+        </ol><br>
+
+        <p class="inter-medium">A unified documentation database — a step forward</p><br>
+
+        <p class="inter-small">
+            For RAG to work efficiently and reliably, a single format for technical documentation is needed.
+            Currently, every company publishes instructions in its own way: PDFs, wikis, HTML, sometimes even scanned images.
+            AI struggles to navigate this variety.
+        </p>
+
+        <p class="inter-small">
+            The optimal solution is to create a centralized documentation repository, where:
+        </p>
+
+        <ul class="inter-small">
+            <li>manufacturers upload official documents themselves,</li>
+            <li>or a bot regularly collects them from websites (where the “Documentation” section is specially marked in the sitemap).</li>
+        </ul><br>
+
+        <p class="inter-small">
+            This database could store documents in their original form and in a processed AI-friendly format, where the structure is standardized.
+            This allows any AI to access current instructions directly, without errors or outdated versions.
+        </p><br>
+<img src="images/ddb2.jpg" alt="Central document database" style="width:100%; margin:10px 0;"><br>
+        <p class="inter-medium">So that AI doesn’t slow down progress</p><br>
+
+        <p class="inter-small">
+            As long as AI relies on outdated data, it remains a tool from the past.
+            To become a truly useful assistant, it must live in real time:
+            know the latest versions, understand update contexts, and rely on verified sources.
+        </p>
+
+        <p class="inter-small">
+            Creating a unified technical knowledge base is not just convenient.
+            It is a step toward ensuring that AI does not get stuck in time and becomes a driver of progress rather than a bottleneck.
+        
+<br> <br>
+Published: October 24, 2025
+
+</p>
+
+      </div>
+
+
+
+
+
+
+<!-- Article 2 -->
+
+
+
+
+
+<div class="card" id="university-lectures">
   <p class="inter-medium">University Lectures as a New Source for Safe AI Training</p><br>
   
 <img src="images/dai.jpg" alt="University lecture and AI illustration" style="width:100%; margin:10px 0;"><br>
@@ -114,7 +269,7 @@
     Elon Musk recently emphasized in an interview that the focus is shifting toward synthetic data, specifically created for AI training. However, synthetic data cannot always replicate the real dynamics of human thinking, debates, and collective discovery of truth.
   </p> <br>
 
-  <p class="inter-small"><strong>Why Learning from Live Processes Matters</strong></p>
+  <p class="inter-medium">Why Learning from Live Processes Matters</p><br>
 
   <p class="inter-small">
     Imagine equipping educational institutions with devices that record lectures, discussions, and debates between students and professors. These devices could capture not only speech but also visual materials like diagrams, blackboards, and presentations. This approach would allow AI models to learn from real interactions, where:
@@ -130,7 +285,7 @@
     This is not just text — it is dynamic learning, where AI observes how humans think, reason, and refine conclusions.
   </p><br>
 
-  <p class="inter-small"><strong>A Question of Fundamental AI Safety</strong></p>
+  <p class="inter-medium">A Question of Fundamental AI Safety</p><br>
 
   <p class="inter-small">
     This approach is directly related to foundational AI safety. The better AI training is structured, the lower the risk that errors, biases, or vulnerabilities will propagate to real-world systems.
@@ -140,7 +295,7 @@
     Our project, a collective red-teaming AI system, creates a network of AIs that monitor each other, detect errors, and identify potential threats. If models are trained on live discussions and real reasoning processes, the number of potential threats reaching global systems is significantly reduced.
   </p><br>
 
-  <p class="inter-small"><strong>Benefits of Learning from Live Data</strong></p>
+  <p class="inter-medium">Benefits of Learning from Live Data</p><br>
 
   <ul class="inter-small">
     <li>Richer knowledge base — AI learns from real reasoning, not just static text.</li>
@@ -149,7 +304,7 @@
     <li>Innovative approach to education and AI — integrating AI into the learning process to improve teaching and analysis.</li>
   </ul>
 
-  <p class="inter-small"><strong>Conclusion</strong></p>
+  <p class="inter-medium">Conclusion</p><br>
 
   <p class="inter-small">
     Shifting from static training on Reddit and Wikipedia to live learning from lectures and debates is a key step toward creating safe and robust AI. Only by observing real human reasoning and debate can AI learn to understand, reason, and assess risks.
@@ -161,6 +316,16 @@
 Published: October 21, 2025
 </p>
 </div>
+
+
+
+    
+
+
+
+
+
+
 
 
 
