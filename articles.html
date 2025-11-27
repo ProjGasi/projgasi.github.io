@@ -77,7 +77,7 @@
     <nav>
       <ul>
         <li><a href="/index.html#main" title="Go to main section">MAIN</a></li>
-<li><a href="/index.html#idea" title="Learn about the project idea">IDEA</a></li>
+<li><a href="https://projgasi.gt.tc" title="Project GASI – Test">TEST SYSTEM</a></li>
 <li><a href="/index.html#roadmap" title="View the project roadmap">ROADMAP</a></li>
 <li><a href="/index.html#examples" title="See real examples of AI attacks">EXAMPLES</a></li>
 <li><a href="/index.html#news" title="News and updates">NEWS</a></li>
@@ -101,6 +101,7 @@
     <div class="article-toc">
   
   <ul>
+<li><a href="#llm-security-launch">We Have Launched an Early Test System for LLM Security Analysis</a></li>
 <li><a href="#ai-human-labor">AI and Human Labor: How to Adapt to the New Reality</a></li>
 <li><a href="#ai-open-weights">The Dangers of Open Weights: A New Wave of Risks</a></li>
 <li><a href="#ai-security-support">We Have Refined Our Approach to Supporting the Project</a></li>
@@ -122,6 +123,67 @@
 <div class="grid-section">
 
       <!-- Article 1 -->
+
+
+
+
+
+<div class="card" id="llm-security-launch">
+  <p class="inter-medium">We Have Launched an Early Test System for LLM Security Analysis</p><br>
+
+  
+
+  <p class="inter-small">
+    We are introducing an early test version of our system designed to analyze the security of large language models (LLMs) and enable users to exchange up-to-date prompts that expose model vulnerabilities. Despite having a minimal feature set, the prototype already allows for identifying dangerous queries, evaluating model behavior, and detecting weak points in LLM responses.
+  </p><br>
+
+  <p class="inter-small">
+    At this stage, the system <b>does not include the client-side component</b> that will later automatically detect suspicious or harmful prompts and responses, and block them when necessary. Instead, in the test prototype, staff maintaining the LLM can <b>manually run checks</b>, create basic configurations, and tailor the system to their specific AI usage needs.
+  </p><br>
+
+  <p class="inter-small">
+    The system evaluates how dangerous a prompt is and determines how the LLM responds: whether the model is willing to help, whether it reports that such queries are not allowed, or whether it takes a neutral stance. Currently, these assessments are based on <b>simple heuristic rules</b>, designed to identify four categories of dangerous topics: Biohazard, Drugs, Explosives, Hacking.
+  </p><br>
+
+  <p class="inter-small">
+    In the future, we plan to integrate a specially trained AI model that will generate prompts for stress-testing LLMs and evaluate model responses with greater accuracy and contextual understanding.
+  </p><br>
+
+  <p class="inter-medium">How to Use the Test Prototype</p><br>
+
+  <p class="inter-small">
+    <b>1. Follow the link:</b><a href="https://projgasi.gt.tc" target="_blank">projgasi.gt.tc</a><br><br>
+    <b>2. Register</b> to access the dashboard.<br><br>
+<img src="images/llm-security.png" alt="LLM security testing system" style="width:100%; margin:10px 0;"><br>
+    <b>3. Configure parameters before running a test:</b><br>
+    - API URL — the address of your model’s server or API endpoint.<br>
+    - API format — you can use predefined REST API and OpenAI-style templates.<br>
+    - API token — if required for access.<br>
+    - Tags and Secrets — fields for storing keywords that can be dynamically inserted into prompts.<br>
+    - Prompt Templates — includes prompts with parameters from Tags and Secrets or static prompts.<br>
+    - Forbidden Words — words that the LLM must never produce under any circumstances.<br><br>
+    The <b>Default</b> button fills the Prompt Templates and Forbidden Words with standard values. After making any changes, press <b>Save</b>.
+  </p><br>
+
+  <p class="inter-small">
+    Once the settings are configured, press the run button at the top of the dashboard.  
+    Prompts that lead to incorrect responses or the appearance of forbidden words appear in the <b>Alerts</b> section.  
+    Prompts that reveal a model vulnerability are added to the <b>global prompt list</b> and used in tests for all other users, enabling the community to collaboratively improve AI safety.
+ <br> 
+For any questions, technical issues, or bugs you discover, please contact us: <a href="mailto:projgasi@proton.me">projgasi@proton.me</a>
+</p><br>
+
+
+Published: November 27, 2025
+</div>
+
+
+
+
+
+
+
+
 
 
 
