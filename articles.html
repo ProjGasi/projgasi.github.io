@@ -101,6 +101,7 @@
     <div class="article-toc">
   
   <ul>
+<li><a href="#reasoning-graph-article">We Are Building Our Own Reasoning Graph and Reasoner</a></li>
 <li><a href="#llm-security-launch">We Have Launched an Early Test System for LLM Security Analysis</a></li>
 <li><a href="#ai-human-labor">AI and Human Labor: How to Adapt to the New Reality</a></li>
 <li><a href="#ai-open-weights">The Dangers of Open Weights: A New Wave of Risks</a></li>
@@ -123,6 +124,105 @@
 <div class="grid-section">
 
       <!-- Article 1 -->
+
+
+
+
+
+<div class="card" id="reasoning-graph-article">
+  <p class="inter-medium">
+    Why We Are Building Our Own Reasoning Graph and Reasoner for Red Teaming Instead of Using Open-Source Solutions
+  </p><br>
+<div style="display:flex; gap:10px; margin:10px 0;">
+    
+    <img src="images/reason_graph.jpg" alt="Reazonex" style="width:90%;">
+</div>
+  <p class="inter-small">
+    As part of the development of our Red Team system, we face a critical task: automatically analyzing user queries and model responses for dangerous, harmful, or otherwise unacceptable content. At the moment, our test environment relies on heuristics — they are simple and fast, but limited in scope, struggle with complex harmful chains, and do not scale well.
+  </p><br>
+
+  <p class="inter-small">
+    Early in the project, we explored alternative approaches, including the use of compact LLMs for classifying queries and responses. After testing, we found that accuracy was unstable and performance was too slow for a system that must operate in real time and evaluate every model interaction.
+  </p><br>
+
+  <p class="inter-small">
+    As a result, we made a strategic decision: to build our own reasoning graph architecture and our own reasoner, fully tailored to the tasks of AI safety and red teaming. We decided to name this project Reazonex. 
+  </p><br>
+<img src="images/reazonex_logo.png" alt="Reazonex" style="width:33%;"><br>
+<p class="inter-small">
+Below are the key reasons why we chose to develop our own system rather than rely on existing open-source solutions.
+</p><br>
+
+  <p class="inter-small"><b>1. Transparency and explainability — a fundamental requirement for AI safety</b></p>
+  <p class="inter-small">
+    Most open-source reasoners operate as black boxes. They hide internal inference logic, rely on complex and opaque rules, and cannot clearly justify how a particular conclusion was reached. For AI safety, where explainability is essential, this is insufficient.
+  </p>
+  <p class="inter-small">
+    A custom reasoning graph allows us to explicitly control node types, define the semantics of each relationship, trace dangerous chains from source to intent, and clearly justify why a query was classified as unsafe. This strengthens auditability and supports future certification of safety-critical systems.
+  </p><br>
+
+  <p class="inter-small"><b>2. Open-source reasoners are not designed for harmful chain analysis</b></p>
+  <p class="inter-small">
+    Existing graph engines and knowledge-reasoning frameworks were built for tasks such as semantic search, ontologies, recommendations, and information retrieval. None of them can analyze chains like:
+    <i>object → action → target → intent → outcome</i>
+    and determine when the combination becomes dangerous.
+  </p>
+  <p class="inter-small">
+    Red Teaming requires unique capabilities: context-dependent action analysis, sequential reasoning, intent evaluation, harmful-chain detection, and deterministic rules for blocking unsafe behavior. Open-source solutions do not provide this.
+  </p><br>
+
+  <p class="inter-small"><b>3. Open-source licenses introduce legal risks for commercial products</b></p>
+  <p class="inter-small">
+    Many ready-made reasoning systems use licenses such as GPL/AGPL, which forbid integration into closed commercial products. Apache 2.0 introduces patent obligations. MIT/BSD are safer, but many dependent models and datasets come with restrictions.
+  </p>
+  <p class="inter-small">
+    For Red Team and AI safety deployments — especially in corporate and governmental environments — legal clarity is a critical requirement. Building our own engine eliminates license risks entirely.
+  </p><br>
+
+  <p class="inter-small"><b>4. Our own architecture gives us deterministic behavior — something LLMs and open-source reasoners cannot guarantee</b></p>
+  <p class="inter-small">
+    Open-source reasoners often depend on probabilistic methods or embeddings that may produce inconsistent or unpredictable outputs. For security applications, this is unacceptable: the system must always return the same verdict for the same input.
+  </p>
+  <p class="inter-small">
+    Our proprietary engine is fully deterministic, reproducible, and controllable — a foundational requirement for safety-critical logic.
+  </p><br>
+
+  <p class="inter-small"><b>5. Guaranteed performance: reasoning graphs are thousands of times faster than LLMs</b></p>
+  <p class="inter-small">
+    Even compact LLMs take 20–200 ms locally and 100–600 ms via API to classify a single message. A graph-based reasoner runs in 0.2–2 ms, performs only a few SQL queries, and reliably handles every model prompt in real time.
+  </p>
+  <p class="inter-small">
+    In Red Teaming, speed is essential — the system cannot wait for an LLM to "think".
+  </p><br>
+
+  <p class="inter-small"><b>6. This architecture may evolve into a standalone product — not just a security tool</b></p>
+  <p class="inter-small">
+    We are starting with a simple implementation built with PHP and MySQL. It can be embedded into any modern website, requires no external AI services, and runs even on low-cost shared hosting.
+  </p>
+  <p class="inter-small">
+    Many researchers consider structured reasoning graphs the likely next step in AI evolution beyond transformers. What begins today as a safety module may eventually grow into a standalone reasoning engine, an Explainable-AI component, a logical inference system, or even a commercial product in its own right.
+  </p><br>
+
+  <p class="inter-small"><b>7. A custom engine enables genuine innovation</b></p>
+  <p class="inter-small">
+    Full control over nodes, relationships, inference rules, context handling, and hazard detection allows us to experiment with new reasoning structures and develop logic that is impossible to achieve with existing tools.
+  </p>
+  <p class="inter-small">
+    Potential directions include: new reasoning-chain architectures, logic-probabilistic hybrids, intent graphs, dynamic safety ontologies, and formal analysis of harmful behaviors.
+  </p><br>
+
+  <p class="inter-small"><b>Conclusion</b></p>
+  <p class="inter-small">
+    We have chosen to build our own reasoning graph and reasoner because this approach best supports the requirements of AI safety: transparency, determinism, legal clarity, performance, and precision. At the same time, the technology we are creating has the potential to evolve far beyond safety applications and become a foundation for next-generation reasoning AI.
+  </p>
+  <br>
+
+Published: December 09, 2025
+</div>
+
+
+
+
 
 
 
