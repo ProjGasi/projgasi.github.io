@@ -101,6 +101,7 @@
     <div class="article-toc">
   
   <ul>
+<li><a href="#graph-reasoners-article">About the Graph Reasoners Project</a></li>
 <li><a href="#reasoning-graph-article">We Are Building Our Own Reasoning Graph and Reasoner</a></li>
 <li><a href="#llm-security-launch">We Have Launched an Early Test System for LLM Security Analysis</a></li>
 <li><a href="#ai-human-labor">AI and Human Labor: How to Adapt to the New Reality</a></li>
@@ -128,12 +129,123 @@
 
 
 
+<!-- Article -->
+
+<div class="card" id="graph-reasoners-article">
+
+  <p class="inter-medium">
+    About the Graph Reasoners Project
+  </p><br>
+
+
+
+  <p class="inter-small">
+    As part of our work, we have developed two graph-based reasoners that address different but conceptually related problems.
+  </p><br>
+
+  <p class="inter-small"><b>AI Safety Reasoner</b></p>
+
+  <p class="inter-small">
+    The first reasoner is being developed as part of an AI safety project Dailogix. Its primary role is to assess the risk and potential danger of user prompts and model responses. It is intended to be integrated into our red teaming system Dailogix, where it will be used for automated analysis of potentially harmful, risky, or otherwise unacceptable reasoning chains.
+  </p><br>
+
+  <p class="inter-small">
+    This reasoner is designed to identify hidden causal relationships, dangerous combinations of facts, actions, and states — patterns that are difficult to detect using simple heuristics or conventional filtering approaches.
+  </p><br>
+
+  <p class="inter-small"><b>General-Purpose Reasoner</b></p>
+
+  <p class="inter-small">
+    The second reasoner is a standalone research project aimed at building thinking AI systems as an alternative to the currently dominant transformer-based, probabilistic text generation paradigm.
+  </p><br>
+
+  <p class="inter-small">
+    Within this project, we have developed a universal graph structure composed of nodes and edges that allows us to represent:
+  </p>
+
+  <p class="inter-small">
+    – the structure of the world,<br>
+    – processes occurring within it,<br>
+    – physical and logical laws,<br>
+    – facts and states,<br>
+    – actions and their consequences,<br>
+    – abstract and applied knowledge.
+  </p><br>
+
+  <p class="inter-small">
+    The core idea is that reasoning can be implemented as the propagation of influence through a knowledge graph, rather than as the generation of token sequences.
+  </p><br>
+
+  <p class="inter-small"><b>Current State of the Project</b></p>
+
+  <p class="inter-small">
+    At this stage, a test prototype of the reasoner has been implemented, and a graph with a small, partially populated set of meaningful nodes and relations has been created. An example of the reasoner’s operation can be seen in the accompanying video.
+  </p><br>
+<video
+  autoplay
+  loop
+controls
+  muted
+  playsinline
+  style="max-width:100%; border-radius:8px;">
+  <source src="video/rg.mp4" type="video/mp4">
+</video>
+
+<br>
+  <p class="inter-small">
+    In addition to the meaningful test content, the graph also contains 10 million nodes with random content. These nodes are used solely for performance and scalability evaluation, not for logical inference or reasoning.
+  </p><br>
+
+  <p class="inter-small"><b>Graph Training</b></p>
+
+  <p class="inter-small">
+    One of the main open research questions is how to train the graph effectively. We are currently running multiple experiments, and so far the best results have been achieved using large language models (LLMs) as a source of structured knowledge during the training process.
+  </p><br>
+
+  <p class="inter-small">
+    Unfortunately, our current computational resources do not allow us to perform training at high speed, as the inference speed of LLMs remains relatively low. We hope to acquire or rent more powerful servers equipped with AI accelerators in the near future to significantly speed up this phase.
+  </p><br>
+
+  <p class="inter-small"><b>Differences from LLMs</b></p>
+
+  <p class="inter-small">
+    The video also highlights an important property of the reasoner: its outputs are fully deterministic. Given the same inputs and conditions, it always produces the same result, in contrast to LLMs, whose responses may vary between runs.
+  </p><br>
+
+  <p class="inter-small">
+    At the same time, the current prototype does not include a sophisticated language layer, so interaction with it takes place using a simplified and constrained vocabulary. This is a deliberate limitation of the current development stage.
+  </p><br>
+
+  <p class="inter-small">
+    Published: February 02, 2026
+  </p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
 
 <div class="card" id="reasoning-graph-article">
   <p class="inter-medium">
     Why We Are Building Our Own Reasoning Graph and Reasoner for Red Teaming Instead of Using Open-Source Solutions
   </p><br>
+
+
+
+
 <div style="display:flex; gap:10px; margin:10px 0;">
+
+
+
+
+
     
     <img src="images/reason_graph.jpg" alt="Reazonex" style="width:90%;">
 </div>
