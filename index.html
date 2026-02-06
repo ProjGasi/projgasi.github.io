@@ -740,7 +740,7 @@ Please consider sending funds to the wallets below:
 <div class="qr-row">
 <div class="qr-item">
         <div class="qr-img">
-          <img src="images/solana.png" alt="ETH QR" class="clickable-image" style="max-width:100%; cursor:pointer;"/>
+          <img src="images/solana.png" alt="SOL QR" class="clickable-image" style="max-width:100%; cursor:pointer;"/>
         </div>
         <div class="addr">
           SOL / Solana:<br>
@@ -754,7 +754,7 @@ Please consider sending funds to the wallets below:
   
 <div class="qr-item">
         <div class="qr-img">
-          <img src="images/base.png" alt="ETH QR" class="clickable-image" style="max-width:100%; cursor:pointer;"/>
+          <img src="images/base.png" alt="BASE QR" class="clickable-image" style="max-width:100%; cursor:pointer;"/>
         </div>
         <div class="addr">
           Base:<br>
@@ -825,7 +825,7 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
     navigator.clipboard.writeText(address)
       .then(() => {
         btn.textContent = 'Copied!';
-        setTimeout(() => btn.textContent = btn.dataset.copy.startsWith('bc') ? 'Copy BTC' : 'Copy ETH', 1500);
+        setTimeout(() => btn.textContent = btn.dataset.copy.startsWith('bc') ? 'Copy' : 'Copy', 1500);
       })
       .catch(err => {
         console.error('Copy failed', err);
