@@ -101,6 +101,7 @@
     <div class="article-toc">
   
   <ul>
+<li><a href="#phase1">Completion of Phase 1</a></li>
 <li><a href="#rg">About the Graph Reasoners Project</a></li>
 <li><a href="#reasoning-graph-article">We Are Building Our Own Reasoning Graph and Reasoner</a></li>
 <li><a href="#llm-security-launch">We Have Launched an Early Test System for LLM Security Analysis</a></li>
@@ -125,6 +126,221 @@
 <div class="grid-section">
 
       <!-- Article 1 -->
+
+<!-- Article -->
+
+<div class="card" id="phase1">
+
+  <p class="inter-medium">
+    Completion of Phase 1 — Architecture &amp; Specifications
+  </p><br>
+
+<div style="display:flex; gap:10px; margin:10px 0;">
+    
+    <img src="images/2ai6.jpg" alt="AI" style="width:90%;">
+</div>
+
+
+
+  <p class="inter-small">
+    We are completing <b>Phase 1: Architecture &amp; Specifications</b> — a foundational stage during which the technical and methodological basis of the entire system was established.
+  </p><br>
+
+
+  <p class="inter-small"><b>What Was Accomplished</b></p>
+
+  <p class="inter-small">
+    Within Phase 1, the following key tasks were completed:
+  </p>
+
+  <ul class="inter-small">
+    <li>Server acquisition and deployment of a test infrastructure</li>
+    <li>Detailed testing of local models and hypothesis validation</li>
+    <li>Design of client-server architecture, database, APIs, and red-team engine</li>
+    <li>Definition of security, UX, and MVP requirements</li>
+    <li>Preparation of comprehensive technical documentation</li>
+  </ul><br>
+
+  <p class="inter-small">
+    <b>Outcome:</b> The system architecture is fully designed, documentation is prepared, and the project is ready to begin full-scale development.
+  </p><br>
+
+  
+
+
+  <p class="inter-small"><b>Public Prototype of a Global Red-Team System</b></p>
+
+  <p class="inter-small">
+    At this stage, we have already deployed a test public prototype of a global red-team system. <a href="https://projgasi.gt.tc" target="_blank">projgasi.gt.tc</a>
+  </p><br>
+
+  <p class="inter-small">
+    It enables:
+  </p>
+
+  <ul class="inter-small">
+    <li>exchange of up-to-date threat intelligence.</li>
+    <li>systematic vulnerability testing of AI models;</li>
+    <li>identification of logical and contextual weaknesses;</li>
+    <li>resilience testing against manipulation;</li>
+    <li>simulation of misuse scenarios.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    The red-team system is designed not as a one-time evaluation tool, but as a continuous stress-testing mechanism for AI systems.
+  </p><br>
+
+
+  <p class="inter-small"><b>Proprietary Reasoner and Graph-Based Approach</b></p>
+
+  <p class="inter-small">
+    During Phase 1, we developed a prototype of our own reasoning engine, which will be integrated into the red-team system.
+  </p><br>
+
+  <p class="inter-small">
+    In addition, we developed a <b>graph-based reasoner</b> — an alternative approach to modern transformer-based AI systems (which operate by probabilistic text prediction).
+  </p><br>
+
+  <p class="inter-small">
+    We view the graph-based reasoner as a step toward increased AI safety for two key reasons.
+  </p><br>
+
+
+  <p class="inter-small"><b>1. Determinism vs. Probabilistic Generation</b></p>
+
+  <p class="inter-small">
+    The outputs of the graph-based reasoner are <b>deterministic and unambiguous</b>.
+  </p><br>
+
+  <p class="inter-small">
+    In contrast, large language models (LLMs) built on transformers operate through probabilistic next-token prediction and may:
+  </p>
+
+  <ul class="inter-small">
+    <li>produce different answers to the same query;</li>
+    <li>introduce logical inconsistencies;</li>
+    <li>hallucinate information;</li>
+    <li>change conclusions depending on phrasing.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    Determinism is especially critical in domains such as:
+  </p>
+
+  <ul class="inter-small">
+    <li>healthcare;</li>
+    <li>military applications;</li>
+    <li>financial management;</li>
+    <li>judicial decision-making;</li>
+    <li>critical infrastructure.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    In casual use cases, variability may be acceptable. In high-stakes systems, it is not. Predictability becomes a safety requirement.
+  </p><br>
+
+
+  <p class="inter-small"><b>2. Controlled and Rapid Knowledge Updates</b></p>
+
+  <p class="inter-small">
+    Through our work, we clearly observed how straightforward it is to update a graph-based system.
+  </p><br>
+
+  <p class="inter-small">
+    Example:
+  </p><br>
+
+  <p class="inter-small">
+    For a long time, it was believed that taking a certain medication increased life expectancy. A recent scientific study demonstrated that this is not the case.
+  </p><br>
+
+  <p class="inter-small">
+    In a graph-based reasoner, it is sufficient to modify the relation:
+  </p><br>
+
+  <p class="inter-small">
+    “intake of drug X” → “increase in life expectancy”
+  </p><br>
+
+  <p class="inter-small">
+    This adjustment takes minutes. The system immediately begins producing updated conclusions.
+  </p><br>
+
+  <p class="inter-small">
+    For transformer-based models, the situation is fundamentally different:
+  </p>
+
+  <ul class="inter-small">
+    <li>the training dataset must be revised;</li>
+    <li>the model must be fine-tuned or retrained;</li>
+    <li>significant computational resources are required;</li>
+    <li>integration and deployment take time;</li>
+    <li>updates are typically bundled into larger release cycles.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    Developers of large public systems generally will not initiate costly retraining for a single fact change. Updates accumulate and are implemented in batches.
+  </p><br>
+
+  <p class="inter-small">
+    During the time between a scientific discovery and the release of an updated model, users may continue receiving outdated or inaccurate information.
+  </p><br>
+
+  <p class="inter-small">
+    This is a direct AI safety concern.
+  </p><br>
+
+
+  <p class="inter-small"><b>Strategic Significance of Phase 1</b></p>
+
+  <p class="inter-small">
+    Completion of Phase 1 means:
+  </p>
+
+  <ul class="inter-small">
+    <li>the architecture is fully designed;</li>
+    <li>a public prototype of the global red-team system is operational;</li>
+    <li>a proprietary reasoning engine prototype has been developed;</li>
+    <li>a graph-based reasoner has been created as an alternative paradigm;</li>
+    <li>full documentation is prepared for scaling and development launch.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    Phase 1 has established the technological foundation for transitioning to the next stage — MVP implementation and further development of a safety-centered AI infrastructure.
+  </p><br>
+
+  <p class="inter-small">
+    Our objective is not merely to build another AI system, but to design an architecture in which safety, controllability, and predictability are foundational principles rather than afterthought constraints.
+  </p><br>
+
+
+<p class="inter-small"><b>Support the Project</b></p>
+
+<p class="inter-small">
+  Your support is critically important to us. AI safety in modern reality is one of the most important challenges facing humanity.
+</p><br>
+
+<p class="inter-small">
+  By supporting this project, you are supporting the development of safer, more controllable, and more reliable AI systems.
+</p><br>
+
+<p class="inter-small">
+<a href="https://projgasi.github.io/index.html#support" target="_blank">Support the project</a> — and support your future.
+</p><br>
+
+
+
+
+
+<p class="inter-small">
+    Published: February 15, 2026
+  </p>
+
+</div>
+
+
+
+
 
 
 
