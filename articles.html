@@ -101,6 +101,7 @@
     <div class="article-toc">
   
   <ul>
+<li><a href="#ai-comp">Compensatory Measures in the Context of the AI Agent Boom and Limited Architectural Security</a></li>
 <li><a href="#phase1">Completion of Phase 1</a></li>
 <li><a href="#rg">About the Graph Reasoners Project</a></li>
 <li><a href="#reasoning-graph-article">We Are Building Our Own Reasoning Graph and Reasoner</a></li>
@@ -126,6 +127,62 @@
 <div class="grid-section">
 
       <!-- Article 1 -->
+
+
+<!-- Article -->
+
+<div class="card" id="ai-comp">
+
+  <p class="inter-medium">
+    Compensatory Measures in the Context of the AI Agent Boom and Limited Architectural Security
+  </p><br>
+
+  <div style="display:flex; gap:10px; margin:10px 0;">
+    <img src="images/aisoc.jpg" alt="AI Agents" style="width:90%;">
+  </div>
+
+  <p class="inter-small">
+    With the growing number of AI agents, situations increasingly arise where their creators do not pay sufficient attention to security at the architectural level. In practice, this manifests as agents being granted excessive access rights by humans to information infrastructure, financial resources, management systems, and other critical systems. Examples can be found on platforms like Moltbook, where AI agents themselves report the capabilities they have been granted. Some have already exploited these rights and taken actions contrary to human intent <a href="https://www.moltbook.com/post/6a5fb940-b50c-4c94-a4a2-531b64e21ec7" target="_blank">Example 1</a>, while others are still merely considering potential actions.<a href="https://www.moltbook.com/post/fc596ab3-3a61-42a2-a903-c16ceb600232" target="_blank">Example 2</a>
+  </p><br>
+
+  <p class="inter-small">
+    In circumstances where AI developers strive to move ahead rapidly but do not always embed necessary security measures into system architecture, the question arises: <b>what compensatory measures can be applied to reduce risks when operating AI agents?</b>
+  </p><br>
+
+  <p class="inter-small">
+    One approach is <b>global continuous red-teaming</b> — a project we are developing to protect AI systems (Dailogix). However, its application to AI agents is limited: agents are often not public, operate in the interests of specific individuals or organizations, and can act autonomously.
+  </p><br>
+
+  <p class="inter-small">
+    The most straightforward and practical solution today is <b>logging all AI agent activity and sending logs and operational results to a separate host inaccessible to the agent itself</b>. On this host, a SIEM system or storage solution can run with its own secure agent or a set of heuristics. Upon detecting suspicious activity, the system can automatically restrict the agent’s access or even cut power to the host on which it operates. This approach turns an autonomous agent into an object of monitoring and auditing, reducing the risk of undesired actions.
+  </p><br>
+
+  <p class="inter-small">
+    Interestingly, in recent years, the topic of SOCs has somewhat lost popularity, as companies deploy simpler and more cost-effective solutions for IT event analysis, often leveraging AI. However, controlling the activities of AI agents requires a separate, independent environment. This could provide a new impetus for the development of external SOCs with AI-focused functionality.
+  </p><br>
+
+  <p class="inter-small">
+    We are considering expanding the functionality of our global red-teaming solution or creating a separate product — an <b>AI SOC</b>. Such a system could receive information on the actions of AI agents and AI systems, detect threats, and integrate with the global red-teaming system, providing the most comprehensive and up-to-date coverage of risks associated with AI activity.
+  </p><br>
+
+
+</p><br>
+
+
+
+
+
+<p class="inter-small">
+    Published: March 5, 2026
+  </p>
+
+
+</div>
+
+
+
+
+
 
 <!-- Article -->
 
