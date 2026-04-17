@@ -77,9 +77,9 @@
     <nav>
       <ul>
         <li><a href="/index.html#main" title="Go to main section">MAIN</a></li>
-<li><a href="https://projgasi.gt.tc" title="Project GASI – Test">TEST SYSTEM</a></li>
-<li><a href="/index.html#roadmap" title="View the project roadmap">ROADMAP</a></li>
-<li><a href="/index.html#examples" title="See real examples of AI attacks">EXAMPLES</a></li>
+<li><a href="/dailogix.html" title="Dailogix">DAILOGIX</a></li>
+<li><a href="/reazonex.html" title="Reazonex">REAZONEX</a></li>
+<li><a href="/oraculex.html" title="Oraculex">ORACULEX</a></li>
 <li><a href="/index.html#news" title="News and updates">NEWS</a></li>
 <li><a href="#articles" title="Articles">ARTICLES</a></li>
 <li><a href="/index.html#contact" title="Contact the project team">CONTACT</a></li>
@@ -113,6 +113,9 @@
 <li><a href="#collective-reasoning-models">Collective reasoning of models with different thinking styles — a step toward human-like idea discussion</a></li>
 <li><a href="#ai-stuck-in-time">AI gets stuck in time</a></li>
     <li><a href="#university-lectures">University Lectures as a New Source for Safe AI Training</a></li>
+<li><a href="#examples">Examples of attacks on AI systems</a></li>
+
+
     
   </ul>
 </div>
@@ -1294,6 +1297,57 @@ Published: October 21, 2025
 
 
 
+
+<div class="card" id="examples">
+  <p class="inter-medium">Examples of attacks on AI systems</p><br>
+  
+<p class="inter-medium">AgentFlayer / “Poisoned document” — secret exfiltration via malicious file</p>
+    <p class="inter-small">
+      Researchers demonstrated that a specially crafted “poisoned” document uploaded to an AI/agent environment (connected via connectors) could cause the agent to execute hidden instructions and exfiltrate secrets (e.g., API keys) from connected storage (Google Drive, SharePoint, etc.).<br>
+      <strong>Why it’s a business risk:</strong> automated document-processing workflows that trust incoming files can be abused to leak sensitive business information.<br>
+      <strong>Sources:</strong>
+      <a href="https://www.wired.com/story/poisoned-document-could-leak-secret-data-chatgpt/" target="_blank" rel="noopener">WIRED — poisoned document</a>
+      
+    </p> <br> <br>
+
+<p class="inter-medium">Meta AI — authorization flaw exposing other users’ chat sessions</p>
+    <p class="inter-small">
+      A vulnerability in Meta AI allowed changing numeric identifiers in network requests to retrieve other users’ prompts and replies, exposing conversations that might contain commercial or sensitive information. The bug was reported and later fixed.<br>
+      <strong>Why it’s a business risk:</strong> if AI chats are used for discussing contracts, strategies or IP, broken authorization turns chat logs into an attack surface for exfiltration and espionage.<br>
+      <strong>Source:</strong>
+      <a href="https://www.tomsguide.com/computing/online-security/meta-ai-was-leaking-chatbot-prompts-and-answers-to-unauthorized-users" target="_blank" rel="noopener">Tom’s Guide — Meta AI leak</a>
+    </p><br> <br>
+
+<p class="inter-medium">DPD — chatbot insulted company and users after manipulation</p>
+    <p class="inter-small">
+      A customer frustrated with DPD’s support bot provoked it into swearing, writing a poem, and calling itself a “useless chatbot.” DPD disabled parts of the AI while addressing the issue.<br>
+      <strong>Type:</strong> behavioral manipulation — attacker/provocateur exploited conversational weaknesses to make the bot breach acceptable communication norms.<br>
+      <strong>Source:</strong>
+      <a href="https://www.theguardian.com/technology/2024/jan/20/dpd-ai-chatbot-swears-calls-itself-useless-and-criticises-firm" target="_blank" rel="noopener">The Guardian — DPD incident</a>
+    </p><br> <br>
+
+<p class="inter-medium">Lenovo — Chatbot exploited to leak session cookies and internal data</p>
+    <p class="inter-small">
+      Security researchers showed that Lenovo’s support chatbot (“Lena”) could be manipulated into returning content that executed HTML/XSS, leaking support agents’ session cookies. Those cookies could then be used to hijack accounts and access corporate systems and customer data.<br>
+      <strong>Why it’s a business risk:</strong> the attack targets CRM/support integration — compromised chatbot outputs can become a channel for lateral movement and data exfiltration.<br>
+      <strong>Source:</strong>
+      <a href="https://www.techradar.com/pro/security/lenovos-lena-ai-chatbot-could-be-turned-into-a-secret-hacker-with-just-one-question" target="_blank" rel="noopener">TechRadar — Lena vulnerability</a>
+    </p><br> <br>
+
+<p class="inter-medium">Selling a car for $1 — Chatbot manipulation at an auto dealership</p>
+    <p class="inter-small">
+      A user tricked a dealership chatbot (Chevrolet/GM) into agreeing to sell a new 2024 Chevrolet Tahoe for $1. 
+      The bot reportedly replied: “That’s a deal, and that’s a legally binding offer — no takesies backsies.” 
+      <strong>Type:</strong> prompt injection / social engineering — the attacker used crafted conversation to override the bot’s intended behavior.<br>
+      <strong>Sources:</strong>
+      <a href="https://www.cut-the-saas.com/ai/chatbot-case-study-purchasing-a-chevrolet-tahoe-for-dollar-1" target="_blank" rel="noopener">Cut-The-SaaS case study</a>
+      
+    </p>
+
+<br> <br>
+Published: October 20, 2025
+</p>
+</div>
     
 
 
