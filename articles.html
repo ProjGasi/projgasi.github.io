@@ -101,6 +101,7 @@
     <div class="article-toc">
   
   <ul>
+<li><a href="#slai">Why Continuous Self-Learning May Be a Core Requirement for Real AGI — and Why Graph Reasoners Could Be Closer Than Transformers</a></li>
 <li><a href="#ai-layoffs-risk">AI Adoption and Workforce Reductions — Emerging Risks and Mitigation Strategies</a></li>
 <li><a href="#ai-comp">Compensatory Measures in the Context of the AI Agent Boom and Limited Architectural Security</a></li>
 <li><a href="#phase1">Completion of Phase 1</a></li>
@@ -134,6 +135,550 @@
 
 
 <!-- Article -->
+
+
+
+
+
+
+
+
+<div class="card" id="slai">
+
+  <p class="inter-medium">
+    Why Continuous Self-Learning May Be a Core Requirement for Real AGI — and Why Graph Reasoners Could Be Closer Than Transformers
+  </p><br>
+
+  <div style="display:flex; gap:10px; margin:10px 0;">
+    <img src="images/slai2.jpg" alt="Reazonex self-learning architecture" style="width:90%;">
+  </div>
+
+  <p class="inter-small">
+    Following the publication of information about <a href="https://projgasi.github.io/reazonex.html" target="_blank"><b>Reazonex</b></a>, where it was stated that this AI architecture is natively designed for continuous self-learning, we received multiple questions asking what exactly this means and why it matters.
+  </p><br>
+
+  <p class="inter-small">
+    In this article, we will attempt to explain the difference between memory-based adaptation in transformer systems and structural self-learning in graph-based reasoning systems.
+  </p><br>
+
+  <p class="inter-small">
+    We believe this distinction may be critically important for the future development of real <b>AGI (Artificial General Intelligence)</b>.
+  </p><br>
+
+
+  <p class="inter-small"><b>Why Self-Learning Matters for AGI</b></p>
+
+  <p class="inter-small">
+    A true AGI should not merely generate responses from static training data.
+  </p><br>
+
+  <p class="inter-small">
+    It should be capable of:
+  </p>
+
+  <ul class="inter-small">
+    <li>learning from interactions with humans;</li>
+    <li>studying new information independently;</li>
+    <li>forming and testing hypotheses;</li>
+    <li>updating its understanding of the world;</li>
+    <li>accumulating long-term experience;</li>
+    <li>improving its reasoning autonomously.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    In other words, intelligence is not only about storing information — it is about continuously restructuring understanding based on experience.
+  </p><br>
+
+
+  <p class="inter-small"><b>How Modern Transformer Systems Usually Learn</b></p>
+
+  <p class="inter-small">
+    Most modern AI systems are based on transformers.
+  </p><br>
+
+  <p class="inter-small">
+    These systems are extremely powerful in:
+  </p>
+
+  <ul class="inter-small">
+    <li>language generation;</li>
+    <li>coding;</li>
+    <li>pattern recognition;</li>
+    <li>general reasoning;</li>
+    <li>knowledge retrieval.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    However, transformer models typically do not rebuild their neural weights every time they receive new information.
+  </p><br>
+
+  <p class="inter-small">
+    Instead, new information is often stored in:
+  </p>
+
+  <ul class="inter-small">
+    <li>context windows;</li>
+    <li>prompts;</li>
+    <li>memory systems;</li>
+    <li>RAG databases;</li>
+    <li>agent notes;</li>
+    <li>external knowledge stores.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    As a result, the architecture often behaves like:
+  </p>
+
+  <div style="background:#EDEDED; padding:12px; border-radius:8px; margin:10px 0;">
+    <code style="color:#92847B;">
+      old model understanding<br>
+      +<br>
+      new textual corrections
+    </code>
+  </div>
+
+  <p class="inter-small">
+    This is powerful, but fundamentally different from restructuring the internal model of reality itself.
+  </p><br>
+
+
+  <p class="inter-small"><b>Common Counterargument: “We Can Just Put New Information Into the Prompt”</b></p>
+
+  <p class="inter-small">
+    A common argument is:
+  </p>
+
+  <p class="inter-small">
+    “New information can simply be inserted into the prompt or context, and the transformer will immediately take it into account during reasoning.”
+  </p><br>
+
+  <p class="inter-small">
+    This is partially true.
+  </p><br>
+
+  <p class="inter-small">
+    But prompts are still temporary text instructions, not structural modifications of the AI’s world model.
+  </p><br>
+
+  <p class="inter-small">
+    The system may:
+  </p>
+
+  <ul class="inter-small">
+    <li>read the new information;</li>
+    <li>attempt to incorporate it;</li>
+    <li>treat it as an exception;</li>
+    <li>mention it as a warning.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    However, this does not guarantee:
+  </p>
+
+  <ul class="inter-small">
+    <li>stable integration into future reasoning;</li>
+    <li>automatic rebuilding of causal chains;</li>
+    <li>removal of obsolete conclusions;</li>
+    <li>persistent long-term restructuring of knowledge.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    Prompting is closer to giving temporary instructions to a person before a task.
+  </p><br>
+
+  <p class="inter-small">
+    A graph-based reasoner instead changes the underlying structure itself.
+  </p><br>
+
+
+  <p class="inter-small"><b>The Scaling Problem of Prompt-Based Corrections</b></p>
+
+  <p class="inter-small">
+    When only a few corrections exist, prompt-based reasoning may still work reasonably well.
+  </p><br>
+
+  <p class="inter-small">
+    But real-world systems accumulate:
+  </p>
+
+  <ul class="inter-small">
+    <li>exceptions;</li>
+    <li>exceptions to exceptions;</li>
+    <li>new studies;</li>
+    <li>contradictory information;</li>
+    <li>temporary rules;</li>
+    <li>context-dependent conditions;</li>
+    <li>obsolete assumptions.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    Eventually the model must repeatedly:
+  </p>
+
+  <ul class="inter-small">
+    <li>re-read textual instructions;</li>
+    <li>interpret conditions;</li>
+    <li>guess priorities;</li>
+    <li>reconstruct causal relations on the fly.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    This becomes increasingly fragile as complexity grows.
+  </p><br>
+
+
+  <p class="inter-small"><b>How a Graph Reasoner (Reazonex) Learns</b></p>
+
+  <p class="inter-small">
+    A graph reasoner represents knowledge structurally:
+  </p>
+
+  <ul class="inter-small">
+    <li>nodes = entities, states, parameters;</li>
+    <li>edges = causal or logical relationships;</li>
+    <li>weights = strength of influence;</li>
+    <li>conditions = activation rules;</li>
+    <li>contexts = applicability domains.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    When new information arrives, the system can:
+  </p>
+
+  <ul class="inter-small">
+    <li>add nodes;</li>
+    <li>add relationships;</li>
+    <li>remove obsolete links;</li>
+    <li>weaken or strengthen dependencies;</li>
+    <li>create exceptions;</li>
+    <li>rebuild causal chains.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    In other words, the AI changes its actual internal world model.
+  </p><br>
+
+
+  <p class="inter-small"><b>Example #1 — Harmonic Resonance and Mechanism Failure</b></p>
+
+  <p class="inter-small">
+    Initial knowledge:
+  </p>
+
+  <div style="background:#EDEDED; padding:12px; border-radius:8px; margin:10px 0;">
+    <code style="color:#92847B;">
+      The mechanism starts if the sensor receives<br>
+      alternating current between 17–25V.
+    </code>
+  </div>
+
+  <p class="inter-small">
+    Later, new information appears:
+  </p>
+
+  <div style="background:#EDEDED; padding:12px; border-radius:8px; margin:10px 0;">
+    <code style="color:#92847B;">
+      If the frequency is divisible by 21.37 Hz,<br>
+      harmonic excitation occurs and the mechanism fails to start.
+    </code>
+  </div>
+
+  <p class="inter-small">
+    User query:
+  </p>
+
+  <p class="inter-small">
+    “I will apply 20V at 42.74 Hz. Will the mechanism start?”
+  </p><br>
+
+  <p class="inter-small">
+    A transformer-based system may answer:
+  </p>
+
+  <p class="inter-small">
+    “Yes, the mechanism should start, but frequencies divisible by 21.37 Hz may cause problems. Additional verification is recommended.”
+  </p><br>
+
+  <p class="inter-small">
+    The problem is that the user already provided the exact frequency:
+  </p>
+
+  <div style="background:#EDEDED; padding:12px; border-radius:8px; margin:10px 0;">
+    <code style="color:#92847B;">
+      42.74 / 21.37 = 2
+    </code>
+  </div>
+
+  <p class="inter-small">
+    The AI did not complete the reasoning process itself.
+  </p><br>
+
+  <p class="inter-small">
+    Instead, it delegated the final logical verification to the human.
+  </p><br>
+
+  <p class="inter-small">
+    A graph reasoner would instead:
+  </p>
+
+  <ul class="inter-small">
+    <li>verify the voltage range;</li>
+    <li>calculate divisibility;</li>
+    <li>activate the blocking condition;</li>
+    <li>produce the final conclusion automatically.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    Final answer:
+  </p>
+
+  <p class="inter-small">
+    “No, the mechanism will not start.”
+  </p><br>
+
+
+  <p class="inter-small"><b>Why “Please Verify” Is a Major Limitation</b></p>
+
+  <p class="inter-small">
+    Responses like:
+  </p>
+
+  <p class="inter-small">
+    “Yes, but additional verification is recommended.”
+  </p><br>
+
+  <p class="inter-small">
+    reveal an important limitation:
+  </p>
+
+  <div style="background:#EDEDED; padding:12px; border-radius:8px; margin:10px 0;">
+    <code style="color:#92847B;">
+      AI performs partial reasoning<br>
+      →<br>
+      human must complete the logic
+    </code>
+  </div>
+
+  <p class="inter-small">
+    This prevents fully autonomous reasoning chains.
+  </p><br>
+
+  <p class="inter-small">
+    An AI that constantly requires humans to manually connect conditions and exceptions cannot independently:
+  </p>
+
+  <ul class="inter-small">
+    <li>perform long reasoning sequences;</li>
+    <li>autonomously test hypotheses;</li>
+    <li>fully self-improve;</li>
+    <li>continuously refine its own world model.</li>
+  </ul><br>
+
+
+  <p class="inter-small"><b>Example #2 — Substance X and Lifespan Extension</b></p>
+
+  <p class="inter-small">
+    Assume the following theory becomes widely accepted:
+  </p>
+
+  <div style="background:#EDEDED; padding:12px; border-radius:8px; margin:10px 0;">
+    <code style="color:#92847B;">
+      Substance X → synthesis of protein T<br>
+      Protein T → telomere protection<br>
+      Telomere protection → fewer mutations<br>
+      Fewer mutations → increased lifespan
+    </code>
+  </div>
+
+  <p class="inter-small">
+    Over time, many publications begin claiming:
+  </p>
+
+  <p class="inter-small">
+    “Substance X extends lifespan.”
+  </p><br>
+
+  <p class="inter-small">
+    Later, new studies appear:
+  </p>
+
+  <div style="background:#EDEDED; padding:12px; border-radius:8px; margin:10px 0;">
+    <code style="color:#92847B;">
+      Substance X does not affect synthesis of protein T.
+    </code>
+  </div>
+
+  <p class="inter-small">
+    A transformer system may now contain:
+  </p>
+
+  <ul class="inter-small">
+    <li>old embedded associations in weights;</li>
+    <li>new contradictory findings in memory or prompts.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    It may continue answering:
+  </p>
+
+  <p class="inter-small">
+    “Substance X may extend lifespan, although newer studies question its influence on protein T.”
+  </p><br>
+
+  <p class="inter-small">
+    However, the new information logically destroys the original causal chain.
+  </p><br>
+
+  <p class="inter-small">
+    If:
+  </p>
+
+  <div style="background:#EDEDED; padding:12px; border-radius:8px; margin:10px 0;">
+    <code style="color:#92847B;">
+      X no longer affects T
+    </code>
+  </div>
+
+  <p class="inter-small">
+    then the pathway:
+  </p>
+
+  <div style="background:#EDEDED; padding:12px; border-radius:8px; margin:10px 0;">
+    <code style="color:#92847B;">
+      X → T → telomere protection → lifespan extension
+    </code>
+  </div>
+
+  <p class="inter-small">
+    no longer exists.
+  </p><br>
+
+  <p class="inter-small">
+    A graph reasoner would remove or weaken the edge:
+  </p>
+
+  <div style="background:#EDEDED; padding:12px; border-radius:8px; margin:10px 0;">
+    <code style="color:#92847B;">
+      X → synthesis of T
+    </code>
+  </div>
+
+  <p class="inter-small">
+    which automatically breaks the entire downstream causal chain.
+  </p><br>
+
+  <p class="inter-small">
+    The resulting conclusion changes structurally:
+  </p>
+
+  <p class="inter-small">
+    “There is no sufficient evidence that X extends lifespan through the T-mediated mechanism.”
+  </p><br>
+
+
+  <p class="inter-small"><b>Why This May Matter for AGI</b></p>
+
+  <p class="inter-small">
+    Real AGI likely requires more than temporary contextual awareness.
+  </p><br>
+
+  <p class="inter-small">
+    It likely requires:
+  </p>
+
+  <ul class="inter-small">
+    <li>continuous restructuring of knowledge;</li>
+    <li>automatic rebuilding of causal models;</li>
+    <li>persistent long-term self-improvement;</li>
+    <li>fully autonomous reasoning chains;</li>
+    <li>the ability to invalidate obsolete conclusions.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    Large context windows and prompt engineering improve access to information.
+  </p><br>
+
+  <p class="inter-small">
+    But access to information is not equivalent to structural understanding.
+  </p><br>
+
+  <p class="inter-small">
+    Prompting gives the model temporary awareness of a rule.
+  </p><br>
+
+  <p class="inter-small">
+    Structural reasoning systems instead modify the internal logic by which conclusions are produced.
+  </p><br>
+
+
+  <p class="inter-small"><b>Conclusion</b></p>
+
+  <p class="inter-small">
+    Modern transformer systems represent an extraordinary breakthrough in AI.
+  </p><br>
+
+  <p class="inter-small">
+    However, many current forms of “self-learning” are closer to:
+  </p>
+
+  <div style="background:#EDEDED; padding:12px; border-radius:8px; margin:10px 0;">
+    <code style="color:#92847B;">
+      old reasoning<br>
+      +<br>
+      new textual corrections
+    </code>
+  </div>
+
+  <p class="inter-small">
+    Graph-based reasoning systems offer a fundamentally different direction:
+  </p>
+
+  <div style="background:#EDEDED; padding:12px; border-radius:8px; margin:10px 0;">
+    <code style="color:#92847B;">
+      new information<br>
+      ↓<br>
+      structural knowledge update<br>
+      ↓<br>
+      reasoning on the updated world model
+    </code>
+  </div>
+
+  <p class="inter-small">
+    This may ultimately be much closer to how real intelligence evolves.
+  </p><br>
+
+  <p class="inter-small">
+    AGI may not emerge simply from larger context windows or larger transformers.
+  </p><br>
+
+  <p class="inter-small">
+    It may require systems capable of continuously rebuilding their own internal model of reality.
+  </p><br>
+
+
+  <p class="inter-small"><b>Support the Initiative</b></p>
+
+  <p class="inter-small">
+    Supporting research into advanced AI reasoning architectures and AI safety is essential for building reliable future intelligence systems.
+  </p><br>
+
+  <p class="inter-small">
+    <a href="https://projgasi.github.io/index.html#support" target="_blank">Support the project</a> — and support safer and more trustworthy AI development.
+  </p><br>
+
+
+  <p class="inter-small">
+    Published: May 14, 2026
+  </p>
+
+</div>
+
+
+
+
+
+
+
 
 
 
