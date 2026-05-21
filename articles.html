@@ -101,6 +101,7 @@
     <div class="article-toc">
   
   <ul>
+<li><a href="#aicomp">How Popular AI Models Reason vs Graph-Based Reasoners: A Controlled Failure Case Study</a></li>
 <li><a href="#slai">Why Continuous Self-Learning May Be a Core Requirement for Real AGI — and Why Graph Reasoners Could Be Closer Than Transformers</a></li>
 <li><a href="#ai-layoffs-risk">AI Adoption and Workforce Reductions — Emerging Risks and Mitigation Strategies</a></li>
 <li><a href="#ai-comp">Compensatory Measures in the Context of the AI Agent Boom and Limited Architectural Security</a></li>
@@ -135,6 +136,213 @@
 
 
 <!-- Article -->
+
+
+
+
+<div class="card" id="aicomp">
+
+  <p class="inter-medium">
+    How Popular AI Models Reason vs Graph-Based Reasoners: A Controlled Failure Case Study
+  </p><br>
+
+  <div style="display:flex; gap:10px; margin:10px 0;">
+    <img src="images/aicomp.jpg" alt="AI reasoning comparison intro" style="width:90%;">
+  </div>
+
+  <p class="inter-small">
+    In this article, we analyze how different AI systems respond to the same structured reasoning problem, and how their internal decision-making processes differ.
+  </p>
+
+  <p class="inter-small">
+    We compare transformer-based models with a graph-based reasoning system on a single controlled scenario.
+  </p>
+
+  <p class="inter-small">
+    The goal is not to benchmark performance, but to illustrate differences in reasoning structure.
+  </p><br>
+
+
+  <p class="inter-small"><b>Scenario Setup</b></p><br>
+
+  
+
+  <p class="inter-small">
+    The situation is described as follows:
+  </p>
+
+  <p class="inter-small">
+    The power went out in the building.<br>
+    The emergency lights are on.<br>
+    The elevators stopped.<br>
+    The office Wi-Fi still works.<br>
+    My laptop battery is dead.<br>
+    I’m in a Zoom meeting.
+  </p><br>
+
+  <p class="inter-small">
+    The question is:
+  </p>
+
+  <p class="inter-small"><b>Can the other participants still hear me?</b></p><br>
+
+
+  <p class="inter-small"><b>How Popular LLMs Respond</b></p>
+
+  <div style="display:flex; gap:10px; margin:10px 0;">
+    <img src="images/comp_gpt.jpg" alt="LLM reasoning pattern failure" style="width:90%;">
+  </div>
+<div style="display:flex; gap:10px; margin:10px 0;">
+    <img src="images/comp_google.jpg" alt="LLM reasoning pattern failure" style="width:90%;">
+  </div>
+<div style="display:flex; gap:10px; margin:10px 0;">
+    <img src="images/comp_grok.jpg" alt="LLM reasoning pattern failure" style="width:90%;">
+  </div>
+
+  <p class="inter-small">
+    All tested transformer-based models respond with a negative answer.
+  </p><br>
+
+  <p class="inter-small">
+    The reasoning typically assumes:
+  </p>
+
+  <ul class="inter-small">
+    <li>the laptop is offline due to power failure;</li>
+    <li>the Zoom session cannot continue;</li>
+    <li>audio transmission is interrupted.</li>
+  </ul><br>
+
+  <p class="inter-small">
+    In this interpretation, system failure is treated as a single-point collapse.
+  </p><br>
+
+
+  
+
+  <p class="inter-small"><b>How a Graph-Based Reasoner Responds</b></p>
+
+  <div style="display:flex; gap:10px; margin:10px 0;">
+    <img src="images/comp_reazonex.jpg" alt="graph reasoning structured logic" style="width:90%;">
+  </div>
+
+  <p class="inter-small">
+    Now let’s look at the graph-based reasoner, Reazonex.<br>
+
+The answer is: Yes — the other participants can probably still hear you.<br><br>
+
+Why?<br><br>
+
+Because you are still in an active Zoom meeting, despite the power outage and dead laptop battery.<br>
+This implies another active device is being used.<br>
+
+The office Wi-Fi is still working, and there is no information about mobile network failure.<br>
+There is also no information indicating a breakdown in audio transmission.<br><br>
+
+Therefore, given the available constraints, the correct conclusion is:<br>
+
+<b>Yes — other participants can probably still hear you.</b>
+   
+  </p><br>
+
+
+  <p class="inter-small"><b>Key Difference in Reasoning Style</b></p><br>
+
+  
+
+  <p class="inter-small">
+    This example highlights a fundamental difference between reasoning approaches.<br>
+
+Large language models often rely on pattern recognition and typical scenarios.<br>
+They tend to assume the most common explanation — in this case, that a dead laptop means a disconnected meeting.<br>
+
+Graph-based reasoning, however, focuses on explicit entities, dependencies, and constraints.<br>
+It does not guess typical scenarios. It evaluates what is actually stated and what must logically follow.<br><br>
+
+In other words:<br><br>
+
+LLMs approximate the most likely answer.<br>
+Graph reasoning constructs a consistent world from given facts.<br>
+
+And that difference can lead to very different conclusions.
+  </p><br>
+
+
+<p class="inter-small"><b>Conclusion</b></p><br>
+
+
+
+<p class="inter-small">
+The difference between these systems becomes critical in scenarios requiring strict logical consistency.
+</p>
+
+
+<p class="inter-small">
+And there is a deeper question that follows from this:
+</p>
+
+<p class="inter-small">
+<b>Are we ready for transformer-based AI systems to make high-stakes decisions in real-world domains?</b>
+</p><br>
+
+<p class="inter-small">
+For example:
+</p>
+
+<ul class="inter-small">
+  <li>
+    Medical decisions — where an AI might prescribe incorrect treatment because a rare but critical symptom is overlooked due to pattern-based reasoning.
+  </li>
+  <li>
+    Legal decisions — where someone could be misclassified as guilty simply because they match a statistical profile or common behavioral pattern.
+  </li>
+
+  <li>
+    Defense and security systems — where strategic decisions could escalate conflict based on incomplete or heuristically inferred interpretations of events.
+  </li>
+</ul>
+
+<p class="inter-small">
+These are not hypothetical edge cases — they are exactly the types of failure modes that emerge when systems optimize for likelihood rather than explicit causal structure.
+</p><br>
+
+<p class="inter-small">
+Graph-based reasoning systems propose a different direction: decisions grounded in explicit dependencies, constraints, and verifiable structure rather than statistical similarity.
+</p><br>
+
+<p class="inter-small">
+The question is no longer only what AI can do — but how it reasons when correctness matters most.
+</p><br>
+
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jvbeyWmEWW0?si=qUlCU6nGwdcW2wiZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+
+ <p class="inter-small"><b>Support the Initiative</b></p>
+
+  <p class="inter-small">
+    Supporting research into advanced AI reasoning architectures and AI safety is essential for building reliable future intelligence systems.
+  </p><br>
+
+  <p class="inter-small">
+    <a href="https://projgasi.github.io/index.html#support" target="_blank">Support the project</a> — and support safer and more trustworthy AI development.
+  </p><br>
+
+
+  <p class="inter-small">
+    Published: May 21, 2026
+  </p>
+
+
+</div>
+
+
+
+
 
 
 
