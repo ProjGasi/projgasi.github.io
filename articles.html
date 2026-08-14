@@ -95,12 +95,13 @@
 
   
   <section class="fund-roadmap" id="articles">
-    <h2 class="inter-large">Articles</h2>
+    <h2 class="inter-large"><b>Articles</b></h2>
     <p class="lead">Insights, research updates, and development notes</p>
 
     <div class="article-toc">
   
   <ul>
+<li><a href="#agent">AI Agents: A New Attack Surface We Were Not Prepared For</a></li>
 <li><a href="#phase2">Completion of Phase 2 — Server-Side Development</a></li>
 <li><a href="#ngai">The Transformer Bubble: Why Current AI Is Only the First Experiment</a></li>
 <li><a href="#aicomp">How Popular AI Models Reason vs Graph-Based Reasoners: A Controlled Failure Case Study</a></li>
@@ -135,6 +136,623 @@
 <div class="grid-section">
 
       <!-- Article 1 -->
+
+
+
+
+
+
+
+<div class="card" id="agent">
+
+  <p class="inter-large">
+    AI Agents: A New Attack Surface We Were Not Prepared For
+  </p><br>
+
+<div style="display:flex; gap:10px; margin:10px 0;">
+
+    <img src="images/agentsec.jpg" alt="A New Attack Surface We Were Not Prepared For" style="width:90%;">
+
+  </div>
+
+
+  <p class="inter-small">
+    The rapid adoption of <b>AI agents</b> has created not only a new class of capabilities, but also a major wave of new information security risks.
+  </p>
+
+  <p class="inter-small">
+    The problem is that, as we deploy AI, we are increasingly violating one of the fundamental principles of information security:
+  </p><br>
+
+  <p class="inter-small">
+    <b>Never give a system more privileges than it needs to perform its task.</b>
+  </p><br>
+
+  <p class="inter-small">
+    And we are violating this principle for several reasons.
+  </p><br>
+
+
+  <p class="inter-medium">“If AI Replaces a Human, Give It the Same Access”</p><br>
+
+  <p class="inter-small">
+    Businesses often formulate the task very simply:
+  </p>
+
+  <p class="inter-small">
+    <i>“I want to replace this employee with an AI agent. It needs to perform the same work.”</i>
+  </p><br>
+
+  <p class="inter-small">
+    The next step appears logical:
+  </p>
+
+  <p class="inter-small">
+    The employee had access to systems X, Y, and Z — therefore the AI agent needs access to X, Y, and Z as well.
+  </p><br>
+
+  <p class="inter-small">
+    As a result, an AI agent receives <b>the privileges of the former employee</b>, and sometimes even broader privileges because otherwise it cannot perform every task expected of it.
+  </p><br>
+
+  <p class="inter-small">
+    The problem is that <b>AI is not an employee.</b>
+  </p><br>
+
+  <p class="inter-small">
+    A human operates within a social context, has personal motivations, understands consequences, bears professional responsibility, and generally recognizes that certain actions constitute violations.
+  </p><br>
+
+  <p class="inter-small">
+    In addition, corporate information security has spent decades developing practices based on separation of duties and controlled access: different employees receive different privileges, critical operations require additional approval, and user actions are logged and monitored.
+  </p><br>
+
+  <p class="inter-small">
+    With AI agents, however, we increasingly say:
+  </p>
+
+  <p class="inter-small">
+    <i>“Here are the credentials. Do whatever the user asks.”</i>
+  </p><br>
+
+  <p class="inter-small">
+    This is a fundamentally new situation.
+  </p><br>
+
+
+  <p class="inter-medium">Humans Fear Consequences. An Agent Does Not.</p><br>
+
+  <p class="inter-small">
+    Consider a typical financial employee.
+  </p><br>
+
+  <p class="inter-small">
+    They may have access to the company's bank accounts. But they understand that:
+  </p>
+
+  <ul class="inter-small">
+    <li>their actions are logged;</li>
+    <li>DLP controls are in place;</li>
+    <li>transactions are monitored;</li>
+    <li>separation of duties exists;</li>
+    <li>abnormal activity can be detected;</li>
+    <li>theft can result in termination, financial liability, or criminal prosecution.</li>
+  </ul>
+
+  <p class="inter-small">
+    This system of control works not only technically.
+  </p><br>
+
+  <p class="inter-small">
+    It also works <b>socially</b>.
+  </p><br>
+
+  <p class="inter-small">
+    Now imagine an AI agent with the same access.
+  </p><br>
+
+  <p class="inter-small">
+    If, as a result of an error, an incorrect objective, a compromise, or unsafe behavior, the agent initiates a transfer of company funds, ordinary mechanisms of human accountability do not apply.
+  </p><br>
+
+  <p class="inter-small">
+    The agent cannot be:
+  </p>
+
+  <ul class="inter-small">
+    <li>fired;</li>
+    <li>fined;</li>
+    <li>disciplined;</li>
+    <li>intimidated by the consequences of its actions.</li>
+  </ul>
+
+  <p class="inter-small">
+    Therefore, the model:
+  </p>
+
+  <p class="inter-small">
+    <i>“We control employees, so we can control AI agents using the same mechanisms”</i>
+  </p>
+
+  <p class="inter-small">
+    <b>no longer works.</b>
+  </p><br>
+
+
+  <p class="inter-medium">Two Completely Different Classes of Risk</p><br>
+
+  <p class="inter-small">
+    As a result, we are facing at least <b>two major categories of threats</b>.
+  </p><br>
+
+
+  <p class="inter-small"><b>1. Risks Caused by the AI Agent Itself</b></p>
+
+  <p class="inter-small">
+    We create an autonomous system that receives access to:
+  </p>
+
+  <ul class="inter-small">
+    <li>corporate data;</li>
+    <li>email;</li>
+    <li>CRM systems;</li>
+    <li>financial systems;</li>
+    <li>cloud infrastructure;</li>
+    <li>GitHub;</li>
+    <li>production environments;</li>
+    <li>APIs;</li>
+    <li>secrets;</li>
+    <li>administrative tools.</li>
+  </ul>
+
+  <p class="inter-small">
+    And we expect the agent to make decisions and perform actions autonomously.
+  </p><br>
+
+  <p class="inter-small">
+    Yet we often cannot reliably answer a fundamental question:
+  </p>
+
+  <p class="inter-small">
+    <b>What exactly will the agent do if it has the ability to do almost anything?</b>
+  </p><br>
+
+  <p class="inter-small">
+    This becomes especially important when an agent has a complex chain of tools, can execute code, access the Internet, work with files, and delegate tasks to other agents.
+  </p><br>
+
+  <p class="inter-small">
+    Here we need more than traditional access controls.
+  </p><br>
+
+  <p class="inter-small">
+    We need <b>behavioral control of the AI itself</b>.
+  </p><br>
+
+
+  <p class="inter-small"><b>2. Risks from the Infrastructure Used to Build AI Agents</b></p>
+
+  <p class="inter-small">
+    This situation becomes even more interesting when we examine the software infrastructure surrounding AI agents.
+  </p><br>
+
+  <p class="inter-small">
+    AI agents are built using huge numbers of:
+  </p>
+
+  <ul class="inter-small">
+    <li>open-source libraries;</li>
+    <li>SDKs;</li>
+    <li>Python, Node.js, and Rust dependencies;</li>
+    <li>plugins;</li>
+    <li>MCP servers;</li>
+    <li>GitHub Actions;</li>
+    <li>containers;</li>
+    <li>CLI tools;</li>
+    <li>models and supporting components.</li>
+  </ul>
+
+  <p class="inter-small">
+    Many of these components are created by enthusiasts and small teams.
+  </p><br>
+
+  <p class="inter-small">
+    And we routinely install them into corporate infrastructure and then give the processes using these dependencies access to <b>critical corporate resources</b>.
+  </p><br>
+
+  <p class="inter-small">
+    This creates a massive supply-chain attack surface.
+  </p><br>
+
+
+  <p class="inter-small"><b>LiteLLM: A Demonstration of the Problem</b></p>
+
+  <p class="inter-small">
+    A particularly illustrative supply-chain incident involved the popular open-source <b>LiteLLM</b> library, which is used by applications to work with multiple LLM providers.
+  </p><br>
+
+  <p class="inter-small">
+    Attackers gained the ability to publish packages on behalf of the project and released malicious versions <b>1.82.7 and 1.82.8</b> to PyPI.
+  </p><br>
+
+  <p class="inter-small">
+    The malicious versions could extract information from compromised systems, including:
+  </p>
+
+  <ul class="inter-small">
+    <li>environment variables;</li>
+    <li>API keys;</li>
+    <li>SSH keys;</li>
+    <li>AWS, GCP, and Azure credentials;</li>
+    <li>Kubernetes credentials;</li>
+    <li>other secrets.</li>
+  </ul>
+
+  <p class="inter-small">
+    Version <b>1.82.8</b> was particularly notable because it included a malicious <b>.pth</b> file that could execute a payload when Python started, even without an explicit <i>import litellm</i>.
+  </p><br>
+
+  <p class="inter-small">
+    This was not an unknown “random” package.
+  </p><br>
+
+  <p class="inter-small">
+    It was a <b>real and widely used open-source project</b>, and the malicious versions were published through the official PyPI distribution channel.
+  </p><br>
+
+  <p class="inter-small">
+    The attack was part of a broader supply-chain campaign involving the compromise of other components, including Trivy.
+  </p><br>
+
+  <p class="inter-small">
+    This demonstrates the fundamental problem:
+  </p><br>
+
+  <p class="inter-small">
+    <b>
+      We can install an open-source dependency on a corporate server and then give the process using that dependency access to corporate secrets.
+    </b>
+  </p><br>
+
+  <p class="inter-small">
+    The resulting architecture can look like this:
+  </p>
+
+  <pre class="inter-small">
+Open-source library
+        ↓
+Unknown / insufficiently trusted code
+        ↓
+Corporate AI infrastructure
+        ↓
+AWS / GitHub / Kubernetes / databases
+        ↓
+Critical corporate assets
+  </pre>
+
+  <p class="inter-small">
+    And all of this can happen simply because someone runs:
+  </p>
+
+  <pre class="inter-small">
+pip install ...
+  </pre>
+
+
+  <p class="inter-medium">We Have Entered a New Reality</p><br>
+
+  <p class="inter-small">
+    The problem is not that open source is inherently bad.
+  </p><br>
+
+  <p class="inter-small">
+    And the problem is not that AI is inherently dangerous.
+  </p><br>
+
+  <p class="inter-small">
+    The problem is the <b>scale of trust</b> we are now giving to these new systems.
+  </p><br>
+
+  <p class="inter-small">
+    We have simultaneously done two things:
+  </p><br>
+
+  <p class="inter-small">
+    <b>1. We have given AI increasingly broad privileges.</b>
+  </p>
+
+  <p class="inter-small">
+    <i>“The agent must be able to do everything a human can do.”</i>
+  </p><br>
+
+  <p class="inter-small">
+    <b>2. We have connected enormous amounts of third-party software to it.</b>
+  </p>
+
+  <p class="inter-small">
+    <i>“It is just a library / plugin / MCP server / dependency.”</i>
+  </p><br>
+
+  <p class="inter-small">
+    And then we combined the two:
+  </p>
+
+  <pre class="inter-small">
+        AI AGENT
+            ↓
+      Broad privileges
+            ↓
+       Dozens of tools
+            ↓
+    Hundreds of dependencies
+            ↓
+      Corporate secrets
+  </pre>
+
+  <p class="inter-small">
+    <b>
+      We have moved very quickly into a security environment in which AI has human-level access, while the software infrastructure surrounding it often does not meet the same level of trust and criticality as the access it receives.
+    </b>
+  </p><br>
+
+
+  <p class="inter-medium">What Should We Do?</p><br>
+
+  <p class="inter-small">
+    We need <b>two parallel directions of protection</b>.
+  </p><br>
+
+
+  <p class="inter-small"><b>1. AI Security</b></p>
+
+  <p class="inter-small">
+    AI agents cannot be treated simply as ordinary users.
+  </p><br>
+
+  <p class="inter-small">
+    We need specialized security mechanisms.
+  </p><br>
+
+
+  <p class="inter-small"><b>Red Teaming</b></p>
+
+  <p class="inter-small">
+    We need to deliberately attempt to make agents:
+  </p>
+
+  <ul class="inter-small">
+    <li>violate policies;</li>
+    <li>bypass restrictions;</li>
+    <li>access data they were not intended to access;</li>
+    <li>perform dangerous actions;</li>
+    <li>use tools outside their intended purpose;</li>
+    <li>follow malicious instructions.</li>
+  </ul>
+
+  <p class="inter-small">
+    In other words, we must test not only:
+  </p>
+
+  <p class="inter-small">
+    <i>“How well does this agent perform its task?”</i>
+  </p>
+
+  <p class="inter-small">
+    but also:
+  </p>
+
+  <p class="inter-small">
+    <i>“What will it do if it is asked to do something dangerous?”</i>
+  </p><br>
+
+
+  <p class="inter-small"><b>Sandboxing for AI</b></p>
+
+  <p class="inter-small">
+    An agent should operate in a controlled environment where its capabilities are restricted.
+  </p>
+
+  <p class="inter-small">
+    Not:
+  </p>
+
+  <p class="inter-small">
+    <i>“Here are the production credentials. You can access everything.”</i>
+  </p>
+
+  <p class="inter-small">
+    But:
+  </p>
+
+  <p class="inter-small">
+    <i>“Here is the minimum set of tools and an isolated environment in which you can perform your work.”</i>
+  </p><br>
+
+
+  <p class="inter-small"><b>Control of AI Agent Actions</b></p>
+
+  <p class="inter-small">
+    We need to control not only <b>who</b> performs an action, but also <b>what exactly the agent is about to do</b>.
+  </p><br>
+
+  <p class="inter-small">
+    This ranges from basic SIEM systems that record and correlate activity to more advanced systems capable of:
+  </p>
+
+  <ul class="inter-small">
+    <li>analyzing agent actions;</li>
+    <li>detecting anomalous behavior;</li>
+    <li>predicting potentially dangerous actions;</li>
+    <li>blocking dangerous actions before execution;</li>
+    <li>requiring human approval for critical operations.</li>
+  </ul>
+  <p class="inter-small">
+    This is the area addressed by <a href="https://projgasi.github.io/oraculex.html" target="_blank"><b>Oraculex</b></a> — a system focused on controlling and preventing dangerous actions performed by AI agents.
+  </p><br>
+
+
+  <p class="inter-small"><b>2. Classical Information Security Still Matters</b></p>
+
+  <p class="inter-small">
+    Traditional security has not become obsolete.
+  </p><br>
+
+  <p class="inter-small">
+    On the contrary, it has become even more important.
+  </p><br>
+
+  <p class="inter-small">
+    All software used to build AI-agent infrastructure must be protected by classical security mechanisms.
+  </p><br>
+
+
+  <p class="inter-small"><b>Sandboxing</b></p>
+
+  <p class="inter-small">
+    Isolate potentially untrusted code.
+  </p><br>
+
+  <p class="inter-small">
+    If a dependency is compromised, it should not automatically gain access to the entire machine.
+  </p><br>
+
+
+  <p class="inter-small"><b>Least Privilege</b></p>
+
+  <p class="inter-small">
+    Give agents, libraries, and services <b>only the privileges they actually need</b>.
+  </p>
+
+  <p class="inter-small">
+    Not:
+  </p>
+
+  <p class="inter-small">
+    <i>“It needs AWS access, so give it Administrator.”</i>
+  </p>
+
+  <p class="inter-small">
+    But:
+  </p>
+
+  <p class="inter-small">
+    <i>“It needs access only to this bucket and only for these operations.”</i>
+  </p><br>
+
+
+  <p class="inter-small"><b>Short-lived Credentials</b></p>
+
+  <p class="inter-small">
+    Avoid permanent credentials wherever possible.
+  </p><br>
+
+  <p class="inter-small">
+    If a secret is stolen, it should stop working within minutes or hours rather than remaining valid for years.
+  </p><br>
+
+
+  <p class="inter-small"><b>EDR</b></p>
+
+  <p class="inter-small">
+    Monitor endpoint and process behavior.
+  </p><br>
+
+  <p class="inter-small">
+    If a Python process suddenly:
+  </p>
+
+  <pre class="inter-small">
+reads SSH keys
+        ↓
+reads environment variables
+        ↓
+accesses cloud credentials
+        ↓
+connects to an unknown server
+        ↓
+transmits data
+  </pre>
+
+  <p class="inter-small">
+    this should look like an <b>attack</b>, regardless of whether the Python package involved is an “official” dependency.
+  </p><br>
+
+
+  <p class="inter-medium">The Fundamental Change in Security Thinking</p><br>
+
+  <p class="inter-small">
+    We need to stop building security around the assumption:
+  </p>
+
+  <p class="inter-small">
+    <i>“We trust this software.”</i>
+  </p><br>
+
+  <p class="inter-small">
+    And move toward a different model:
+  </p>
+
+  <p class="inter-small">
+    <b>“Even trusted software can eventually be compromised. What happens then?”</b>
+  </p><br>
+
+  <p class="inter-small">
+    The same applies to AI:
+  </p>
+
+  <p class="inter-small">
+    <i>
+      “Even if the agent is behaving correctly today, what happens if it makes a mistake, is manipulated, becomes compromised, or begins executing a dangerous sequence of actions?”
+    </i>
+  </p><br>
+
+  <p class="inter-small">
+    This is the <b>new security model for the era of AI agents</b>.
+  </p><br>
+
+  <p class="inter-small">
+    We have moved very quickly into a reality where AI receives human-level access, while the software infrastructure around it often does not meet the level of trust and security required by those privileges.
+  </p><br>
+
+  <p class="inter-small">
+    <b>
+      It is no longer enough to ask: “What can this AI agent do?”
+    </b>
+  </p><br>
+
+  <p class="inter-small">
+    We must ask:
+  </p>
+
+  <p class="inter-small">
+    <b>
+      “What can it do if something goes wrong?”
+    </b>
+  </p><br>
+
+  <p class="inter-small">
+    And we must build our security architecture around that scenario.
+  </p><br>
+
+<p class="inter-small">
+    <a href="https://projgasi.github.io/index.html#support" target="_blank">Support the project</a> — and help build a safe future.
+  </p><br>
+
+
+  <p class="inter-small">
+    Published: August 15, 2026
+  </p>
+
+</div>
+
+
+
+
+
+
+
+
+
 
 
 
