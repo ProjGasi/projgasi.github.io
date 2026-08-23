@@ -101,6 +101,7 @@
     <div class="article-toc">
   
   <ul>
+<li><a href="#aiproxy">AI Proxy with a Fast Reasoner: A New Intelligent Layer Between Users and LLMs</a></li>
 <li><a href="#agent">AI Agents: A New Attack Surface We Were Not Prepared For</a></li>
 <li><a href="#phase2">Completion of Phase 2 — Server-Side Development</a></li>
 <li><a href="#ngai">The Transformer Bubble: Why Current AI Is Only the First Experiment</a></li>
@@ -136,6 +137,707 @@
 <div class="grid-section">
 
       <!-- Article 1 -->
+
+
+
+
+
+
+
+
+<div class="card" id="aiproxy">
+
+  <p class="inter-large">
+    AI Proxy with a Fast Reasoner: A New Intelligent Layer Between Users and LLMs
+  </p><br>
+
+  <div style="display:flex; gap:10px; margin:10px 0;">
+
+    <img src="images/aiproxy.jpg" alt="AI Proxy with a Fast Reasoner" style="width:90%;">
+
+  </div>
+
+  <p class="inter-small">
+    The widespread adoption of <b>large language models (LLMs)</b> is increasingly exposing a fundamental problem: the cost of using AI grows together with the number of requests, tokens, and inference operations.
+  </p>
+
+  <p class="inter-small">
+    At the same time, not every user request actually requires a large and expensive language model. Many questions have already been answered before, relevant information may already exist in a company's knowledge base, and some requests can be resolved using previously accumulated data.
+  </p><br>
+
+  <p class="inter-small">
+    This creates an opportunity for a new infrastructure layer: an <b>intelligent AI Proxy</b>.
+  </p><br>
+
+  <p class="inter-small">
+    Unlike a traditional proxy, which simply forwards requests from users to an LLM provider, an intelligent AI Proxy becomes an independent reasoning layer. It analyzes requests, evaluates available information, searches caches and knowledge graphs, decides whether an external model is actually required, and can verify the response before it reaches the user.
+  </p><br>
+
+  <p class="inter-small">
+    At the center of this architecture is a <b>fast reasoner — Reazonex</b>.
+  </p><br>
+
+
+  <p class="inter-medium">Reazonex as the Core of the AI Proxy</p><br>
+
+  <p class="inter-small">
+    The main idea is simple: <b>do not use a large language model for every request when a faster reasoning system can handle it.</b>
+  </p><br>
+
+  <p class="inter-small">
+    Reazonex acts as a <b>fast reasoning engine</b> — a compact intelligent core capable of analyzing requests, information, and model responses.
+  </p><br>
+
+  <p class="inter-small">
+    With sufficiently comprehensive training and further development, such a reasoner could potentially evolve into the foundation of a much broader general-purpose intelligence system — potentially approaching the concept of <b>AGI</b>.
+  </p><br>
+
+  <p class="inter-small">
+    However, an AI Proxy does not require Reazonex to solve every possible problem on its own.
+  </p><br>
+
+  <p class="inter-small">
+    Its primary role is to <b>understand what is happening, make decisions, and use the available sources as efficiently as possible.</b>
+  </p><br>
+
+  <p class="inter-small">
+    The architecture can be represented conceptually as:
+  </p>
+
+  <pre class="inter-small">
+User → AI Proxy → Reazonex → Cache / Knowledge Graph / LLM → Reazonex → User
+  </pre>
+
+  <p class="inter-small">
+    In this model, an external LLM is no longer the mandatory destination for every request. Instead, it becomes one of several tools available to the intelligent proxy.
+  </p><br>
+
+
+  <p class="inter-medium">How an Intelligent Request Works</p><br>
+
+  <p class="inter-small">
+    Imagine that a user submits a question.
+  </p><br>
+
+  <p class="inter-small">
+    In a traditional architecture, the request is sent almost immediately to GPT, Claude, Gemini, or another model:
+  </p>
+
+  <pre class="inter-small">
+User → LLM → Answer
+  </pre>
+
+  <p class="inter-small">
+    With an AI Proxy powered by Reazonex, the process looks different.
+  </p><br>
+
+  <p class="inter-small"><b>1. Request Analysis</b></p>
+
+  <p class="inter-small">
+    Reazonex determines:
+  </p>
+
+  <ul class="inter-small">
+    <li>what the user actually wants;</li>
+    <li>the context of the request;</li>
+    <li>the type of task;</li>
+    <li>what information may be required;</li>
+    <li>whether relevant information already exists in accumulated data;</li>
+    <li>whether an external LLM is actually necessary.</li>
+  </ul>
+
+
+  <p class="inter-small"><b>2. Cache Verification</b></p>
+
+  <p class="inter-small">
+    The proxy first checks previously generated responses.
+  </p><br>
+
+  <p class="inter-small">
+    This does not have to mean an exact text match.
+  </p><br>
+
+  <p class="inter-small">
+    The system can use a <b>semantic cache</b> and search for previously processed requests with a similar meaning.
+  </p><br>
+
+  <p class="inter-small">
+    For example, a user may previously have asked:
+  </p>
+
+  <p class="inter-small">
+    <i>“How can I reset my corporate VPN password?”</i>
+  </p><br>
+
+  <p class="inter-small">
+    A new request might be:
+  </p>
+
+  <p class="inter-small">
+    <i>“I forgot my company VPN password. How do I change it?”</i>
+  </p><br>
+
+  <p class="inter-small">
+    The wording is different, but the meaning and intent are almost identical.
+  </p><br>
+
+  <p class="inter-small">
+    If the system is sufficiently confident that an existing answer is applicable, the expensive LLM call may not be necessary at all.
+  </p><br>
+
+
+  <p class="inter-medium">The Answer from the Cache Does Not Have to Be a Copy</p><br>
+
+  <p class="inter-small">
+    This is where an intelligent proxy can go beyond a conventional semantic cache.
+  </p><br>
+
+  <p class="inter-small">
+    Reazonex does not necessarily have to retrieve a single previous answer and return it unchanged. It can analyze several previously accumulated responses and combine the relevant information.
+  </p><br>
+
+  <p class="inter-small">
+    For example:
+  </p>
+
+  <ul class="inter-small">
+    <li>one previous response contains the main instructions;</li>
+    <li>another contains an important exception;</li>
+    <li>a third provides additional information;</li>
+    <li>a fourth contains a correction to an earlier mistake.</li>
+  </ul>
+
+  <p class="inter-small">
+    Reazonex can analyze these sources and <b>synthesize a new, logically consistent answer</b>.
+  </p><br>
+
+  <p class="inter-small">
+    The process becomes:
+  </p>
+
+  <pre class="inter-small">
+Cache → Retrieval → Reasoning → Synthesis → Answer
+  </pre>
+
+  <p class="inter-small">
+    In this architecture, accumulated responses are not merely an archive. They become an increasingly useful source of knowledge.
+  </p><br>
+
+
+  <p class="inter-medium">A Proprietary Knowledge Graph</p><br>
+
+  <p class="inter-small">
+    In addition to the cache, the AI Proxy can maintain its own <b>Knowledge Graph</b>.
+  </p><br>
+
+  <p class="inter-small">
+    It can gradually accumulate:
+  </p>
+
+  <ul class="inter-small">
+    <li>facts;</li>
+    <li>documents;</li>
+    <li>results of previous requests;</li>
+    <li>validated answers;</li>
+    <li>relationships between entities;</li>
+    <li>rules;</li>
+    <li>context;</li>
+    <li>user feedback;</li>
+    <li>corrections to previously identified errors.</li>
+  </ul>
+
+  <p class="inter-small">
+    Over time, the system can build its own structured representation of the information it has accumulated.
+  </p><br>
+
+  <p class="inter-small">
+    For example, an enterprise AI Proxy could maintain knowledge about:
+  </p>
+
+  <ul class="inter-small">
+    <li>products;</li>
+    <li>internal processes;</li>
+    <li>departments and organizational structures;</li>
+    <li>documentation;</li>
+    <li>APIs;</li>
+    <li>company policies;</li>
+    <li>technical infrastructure;</li>
+    <li>common customer problems.</li>
+  </ul>
+
+  <p class="inter-small">
+    A new request can then be answered using not only a single previous response, but the <b>structured body of accumulated knowledge</b>.
+  </p><br>
+
+
+  <p class="inter-medium">When Is a Large LLM Still Needed?</p><br>
+
+  <p class="inter-small">
+    Of course, an intelligent proxy should not attempt to answer every possible question by itself.
+  </p><br>
+
+  <p class="inter-small">
+    If the available information is insufficient, the task requires complex generation, or the system is not confident enough in its answer, Reazonex can make a different decision:
+  </p><br>
+
+  <p class="inter-small">
+    <b>“An external LLM is required.”</b>
+  </p><br>
+
+  <p class="inter-small">
+    Reazonex can then determine which model should be used.
+  </p><br>
+
+  <pre class="inter-small">
+Reazonex → GPT
+
+or
+
+Reazonex → Claude
+
+or
+
+Reazonex → Gemini
+
+or
+
+Reazonex → another available model
+  </pre>
+
+  <p class="inter-small">
+    In this architecture, Reazonex becomes an <b>intelligent model router</b>.
+  </p><br>
+
+  <p class="inter-small">
+    It can decide whether to:
+  </p>
+
+  <ul class="inter-small">
+    <li>answer directly;</li>
+    <li>use a cached response;</li>
+    <li>combine several previous answers;</li>
+    <li>query the Knowledge Graph;</li>
+    <li>call an external LLM;</li>
+    <li>use multiple LLMs;</li>
+    <li>request additional information;</li>
+    <li>refuse to answer when confidence is insufficient.</li>
+  </ul>
+
+
+  <p class="inter-medium">Reazonex as a Validation Layer for LLMs</p><br>
+
+  <p class="inter-small">
+    Another important capability is using Reazonex <b>after a large language model has generated an answer</b>.
+  </p><br>
+
+  <p class="inter-small">
+    LLMs can be extremely powerful, but they can also make mistakes and hallucinate.
+  </p><br>
+
+  <p class="inter-small">
+    In a traditional architecture:
+  </p>
+
+  <pre class="inter-small">
+User → LLM → Answer
+  </pre>
+
+  <p class="inter-small">
+    If the LLM is wrong, the user receives the wrong answer.
+  </p><br>
+
+  <p class="inter-small">
+    With Reazonex:
+  </p>
+
+  <pre class="inter-small">
+User → LLM → Reazonex → Verified Answer
+  </pre>
+
+  <p class="inter-small">
+    If enabled, Reazonex can evaluate the generated answer for:
+  </p>
+
+  <ul class="inter-small">
+    <li>logical consistency;</li>
+    <li>internal contradictions;</li>
+    <li>consistency with accumulated information;</li>
+    <li>obvious factual inconsistencies;</li>
+    <li>consistency with the request context;</li>
+    <li>potential hallucinations and errors.</li>
+  </ul>
+
+  <p class="inter-small">
+    If a new answer contradicts information previously accumulated in the system, Reazonex can identify the conflict.
+  </p><br>
+
+  <p class="inter-small">
+    For example, a company's knowledge base may state that a particular API supports only versions 2 and 3, while an LLM suddenly tells the user that version 4 is supported.
+  </p><br>
+
+  <p class="inter-small">
+    Reazonex can detect the contradiction and:
+  </p>
+
+  <ul class="inter-small">
+    <li>reject the answer;</li>
+    <li>request a corrected answer from the LLM;</li>
+    <li>generate its own answer based on available information;</li>
+    <li>inform the user that the available information is insufficient.</li>
+  </ul>
+
+  <p class="inter-small">
+    In this way, Reazonex becomes a <b>control layer between the LLM and the end user</b>.
+  </p><br>
+
+
+  <p class="inter-medium">Self-Learning from Accumulated Information</p><br>
+
+  <p class="inter-small">
+    One of the most interesting directions is the ability of the system to improve as it is used.
+  </p><br>
+
+  <p class="inter-small">
+    Every request can generate new information:
+  </p>
+
+  <pre class="inter-small">
+Request → Answer → User Feedback → Evaluation → New Knowledge
+  </pre>
+
+  <p class="inter-small">
+    If a user confirms that an answer was useful, this can become a positive signal for the system.
+  </p><br>
+
+  <p class="inter-small">
+    If a user reports:
+  </p>
+
+  <p class="inter-small">
+    <i>“This answer is wrong.”</i>
+  </p>
+
+  <p class="inter-small">
+    that becomes an equally important signal.
+  </p><br>
+
+  <p class="inter-small">
+    The system can take into account:
+  </p>
+
+  <ul class="inter-small">
+    <li>positive feedback;</li>
+    <li>negative feedback;</li>
+    <li>user corrections;</li>
+    <li>repeated questions;</li>
+    <li>cases where users choose an alternative answer;</li>
+    <li>information obtained from successful LLM calls;</li>
+    <li>previously identified errors.</li>
+  </ul>
+
+  <p class="inter-small">
+    In this way, the AI Proxy can gradually build <b>its own operational experience</b>.
+  </p><br>
+
+  <p class="inter-small">
+    Self-learning does not necessarily mean constantly changing the model's weights. A significant part of the adaptation can take place through updates to the <b>cache, Knowledge Graph, metadata, rules, routing logic, and confidence mechanisms</b>.
+  </p><br>
+
+  <p class="inter-small">
+    This potentially allows the system to improve without continuously retraining a large neural network.
+  </p><br>
+
+
+  <p class="inter-medium">AI Firewall</p><br>
+
+  <p class="inter-small">
+    Another important component of such a proxy is an <b>AI Firewall</b>.
+  </p><br>
+
+  <p class="inter-small">
+    A traditional network firewall controls network traffic. An AI Firewall can control the <b>semantic content of interactions with AI systems</b>.
+  </p><br>
+
+  <p class="inter-small">
+    It can analyze both incoming requests and outgoing model responses.
+  </p><br>
+
+
+  <p class="inter-small"><b>On the Input Side</b></p>
+
+  <p class="inter-small">
+    The AI Firewall can detect potentially dangerous requests, including:
+  </p>
+
+  <ul class="inter-small">
+    <li>attempts to bypass safety restrictions;</li>
+    <li>malicious instructions;</li>
+    <li>dangerous content;</li>
+    <li>attempts to extract confidential information;</li>
+    <li>prompt injection;</li>
+    <li>suspicious commands;</li>
+    <li>attempts to manipulate the model.</li>
+  </ul>
+
+  <p class="inter-small">
+    When necessary, such a request can be blocked <b>before it reaches an external LLM</b>.
+  </p><br>
+
+
+  <p class="inter-small"><b>On the Output Side</b></p>
+
+  <p class="inter-small">
+    The same system can inspect model responses and detect:
+  </p>
+
+  <ul class="inter-small">
+    <li>dangerous instructions;</li>
+    <li>confidential data leaks;</li>
+    <li>prohibited content;</li>
+    <li>potentially harmful recommendations;</li>
+    <li>violations of internal company policies.</li>
+  </ul>
+
+  <p class="inter-small">
+    This means that the AI Proxy becomes not only an economic and intelligent layer, but also a <b>security layer</b>.
+  </p><br>
+
+
+  <p class="inter-medium">Why This May Not Require an AI Accelerator</p><br>
+
+  <p class="inter-small">
+    One of the most interesting aspects of this architecture is that the core AI Proxy functions do not necessarily require powerful GPUs or dedicated AI accelerators.
+  </p><br>
+
+  <p class="inter-small">
+    If Reazonex is sufficiently fast and compact, a significant portion of the AI Proxy workload can potentially run on <b>ordinary server CPUs</b>.
+  </p><br>
+
+  <p class="inter-small">
+    This can include:
+  </p>
+
+  <ul class="inter-small">
+    <li>request analysis;</li>
+    <li>cache search;</li>
+    <li>semantic retrieval;</li>
+    <li>Knowledge Graph operations;</li>
+    <li>model routing;</li>
+    <li>policy enforcement;</li>
+    <li>content filtering;</li>
+    <li>AI Firewall functions;</li>
+    <li>response validation;</li>
+    <li>metadata processing.</li>
+  </ul>
+
+  <p class="inter-small">
+    This means that the AI Proxy could potentially operate on an <b>entry-level or mid-range server without a dedicated AI accelerator</b>.
+  </p><br>
+
+  <p class="inter-small">
+    Expensive external AI infrastructure would then be used only for the tasks that genuinely require it.
+  </p><br>
+
+
+  <p class="inter-medium">The Economic Model</p><br>
+
+  <p class="inter-small">
+    The main economic idea is straightforward.
+  </p><br>
+
+  <p class="inter-small">
+    Imagine that a company processes <b>1,000,000 requests</b>.
+  </p><br>
+
+  <p class="inter-small">
+    In a traditional architecture, a significant portion of these requests may be sent directly to an LLM.
+  </p><br>
+
+  <p class="inter-small">
+    With an AI Proxy:
+  </p>
+
+  <pre class="inter-small">
+1,000,000 user requests
+        ↓
+    Reazonex
+        ↓
+Cache /  Knowledge Graph  /   LLM
+        
+  </pre>
+
+  <p class="inter-small">
+    Some requests can be answered from existing knowledge.
+  </p>
+
+  <p class="inter-small">
+    Some can be answered using the semantic cache.
+  </p>
+
+  <p class="inter-small">
+    Others can be resolved by combining multiple previously accumulated responses.
+  </p><br>
+
+  <p class="inter-small">
+    Only the remaining requests need to be sent to a large external LLM.
+  </p><br>
+
+  <p class="inter-small">
+    If the architecture can significantly reduce the number of external inference requests, companies can potentially achieve:
+  </p>
+
+  <ul class="inter-small">
+    <li>lower token costs;</li>
+    <li>lower latency;</li>
+    <li>reduced dependency on external AI APIs;</li>
+    <li>lower load on external providers;</li>
+    <li>greater control over data;</li>
+    <li>the ability to use multiple models;</li>
+    <li>an additional layer of security and validation.</li>
+  </ul>
+
+
+  <p class="inter-medium">Not an LLM Replacement — a New Layer Above LLMs</p><br>
+
+  <p class="inter-small">
+    The goal is not to replace GPT, Claude, Gemini, or other large language models.
+  </p><br>
+
+  <p class="inter-small">
+    <b>The goal is to use LLMs more intelligently.</b>
+  </p><br>
+
+  <p class="inter-small">
+    A large model becomes one of the tools available to the system rather than the only source of intelligence.
+  </p><br>
+
+  <p class="inter-small">
+    The architecture can be viewed as:
+  </p>
+
+  <pre class="inter-small">
+User → Reazonex → Knowledge / Cache / Tools / LLMs → Reazonex → User
+  </pre>
+
+  <p class="inter-small">
+    Reazonex is responsible for reasoning and decision-making, while specialized models can be used when they are actually needed.
+  </p><br>
+
+
+  <p class="inter-medium">From AI Gateway to an AI Intelligence Layer</p><br>
+
+  <p class="inter-small">
+    Today, AI Gateways primarily address infrastructure problems: model routing, provider management, monitoring, cost control, and sometimes caching.
+  </p><br>
+
+  <p class="inter-small">
+    The next step is to make this layer <b>intelligent</b>.
+  </p><br>
+
+  <p class="inter-small">
+    An AI Proxy powered by a fast reasoner can combine several capabilities:
+  </p><br>
+
+  <p class="inter-small">
+    <b>AI Gateway</b><br>
+    Model routing
+  </p><br>
+
+  <p class="inter-small">
+    <b>Semantic Cache</b><br>
+    Reuse of existing responses
+  </p><br>
+
+  <p class="inter-small">
+    <b>Knowledge Graph</b><br>
+    Accumulation and structuring of knowledge
+  </p><br>
+
+  <p class="inter-small">
+    <b>Reasoning Engine</b><br>
+    Analysis and decision-making
+  </p><br>
+
+  <p class="inter-small">
+    <b>LLM Validator</b><br>
+    Verification of model responses
+  </p><br>
+
+  <p class="inter-small">
+    <b>Learning Layer</b><br>
+    Learning from accumulated experience and user feedback
+  </p><br>
+
+  <p class="inter-small">
+    <b>AI Firewall</b><br>
+    Protection of both requests and responses
+  </p><br>
+
+  <p class="inter-small">
+    The result is no longer simply a proxy.
+  </p><br>
+
+  <p class="inter-small">
+    It becomes an <b>intelligent layer between humans, enterprise data, and the ecosystem of large language models.</b>
+  </p><br>
+
+
+  <p class="inter-medium">A Possible Future</p><br>
+
+  <p class="inter-small">
+    As the cost and complexity of using LLMs continue to grow, companies may find it increasingly inefficient to send every user request directly to the largest and most expensive model.
+  </p><br>
+
+  <p class="inter-small">
+    Instead, AI infrastructure can evolve toward an architecture in which a <b>fast reasoning layer</b> comes first, followed by local knowledge and cached information, with an external LLM used only when necessary.
+  </p><br>
+
+  <p class="inter-small">
+    In such a system, Reazonex can become the central element:
+  </p><br>
+
+  <p class="inter-small">
+    <b>
+      “Do not ask a large model every time when the system can reasonably answer the question itself.”
+    </b>
+  </p><br>
+
+  <p class="inter-small">
+    And when a large model is required, use it selectively, efficiently, and with validation of its output.
+  </p><br>
+
+  <p class="inter-small">
+    This is what makes the concept of an AI Proxy with a fast reasoner potentially interesting: <b>a single compact intelligent layer can simultaneously reduce LLM costs, accelerate responses, use accumulated knowledge, control model quality, route requests between different models, and provide an additional layer of security.</b>
+  </p><br>
+
+  <p class="inter-small">
+    At the same time, the core proxy infrastructure could potentially run on an <b>entry-level or mid-range server without specialized AI accelerators</b>, reserving expensive compute resources for the tasks that genuinely require them.
+  </p><br>
+
+  <p class="inter-small">
+    <a href="https://projgasi.github.io/index.html#support" target="_blank">Support the project</a> — and help build a more efficient, intelligent, and secure AI infrastructure.
+  </p><br>
+
+  <p class="inter-small">
+    Published: August 23, 2026
+  </p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
