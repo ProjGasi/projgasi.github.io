@@ -101,6 +101,7 @@
     <div class="article-toc">
   
   <ul>
+<li><a href="#reazonex">Our Vision of Reazonex, AI Proxy, and the Next Generation of AI</a></li>
 <li><a href="#aiproxy">AI Proxy with a Fast Reasoner: A New Intelligent Layer Between Users and LLMs</a></li>
 <li><a href="#agent">AI Agents: A New Attack Surface We Were Not Prepared For</a></li>
 <li><a href="#phase2">Completion of Phase 2 — Server-Side Development</a></li>
@@ -137,6 +138,671 @@
 <div class="grid-section">
 
       <!-- Article 1 -->
+
+
+
+
+
+
+
+
+
+<div class="card" id="reazonex">
+
+  <p class="inter-large">
+    Our Vision of Reazonex, AI Proxy, and the Next Generation of AI
+  </p><br>
+<div style="display:flex; gap:10px; margin:10px 0;">
+
+    <img src="images/reazonexllm.jpg" alt="Next Generation of AI" style="width:90%;">
+
+  </div>
+  <p class="inter-small">
+    After publishing our article about <b>AI Proxy with a Reazonex core</b>, we received a number of questions about why such an approach is needed at all, why we are not trying to create a full-fledged AGI immediately, and what role modern LLMs should play in this architecture.
+  </p>
+
+  <p class="inter-small">
+    Therefore, we would like to describe our vision in greater detail — <b>based on the actual state of the project and the resources available to us today</b>.
+  </p><br>
+
+
+  <p class="inter-medium">1. What Is Reazonex?</p><br>
+
+  <p class="inter-small">
+    Let us start with the most important point.
+  </p><br>
+
+  <p class="inter-small">
+    <b>Reazonex is a full-fledged AI system built on a graph-based architecture.</b>
+  </p>
+
+  <p class="inter-small">
+    We are developing it as an alternative approach to building intelligent systems, based not only on statistical sequence generation, but on working with a knowledge graph, relationships between elements, and a reasoning mechanism.
+  </p>
+
+  <p class="inter-small">
+    We see several fundamental advantages of this approach:
+  </p>
+
+  <ul class="inter-small">
+    <li>high processing speed;</li>
+    <li>reasoning accuracy;</li>
+    <li>consistency of logic during repeated reasoning;</li>
+    <li>the ability to accumulate knowledge;</li>
+    <li>the ability to learn quickly "on the fly";</li>
+    <li>no need to rebuild a huge set of weights every time new information is added.</li>
+  </ul>
+
+  <p class="inter-small">
+    More information about Reazonex is available in a separate article: <a href="https://projgasi.github.io/reazonex.html" target="_blank">Reazonex</a>.
+  </p>
+
+  <p class="inter-small">
+    We also have a separate test in which Reazonex solves a logical problem: <a href="https://projgasi.github.io/articles.html#aicomp" target="_blank">How Popular AI Models Reason vs Graph-Based Reasoners</a>.
+  </p>
+
+  <p class="inter-small">
+    However, an important clarification needs to be made here.
+  </p><br>
+
+  <p class="inter-medium">Reazonex Is Not Yet Trained</p><br>
+
+  <p class="inter-small">
+    In the current version, there is a graph structure, reasoning algorithms, learning algorithms, and a <b>small amount of test knowledge</b> that is used to verify the architecture itself, the reasoning mechanism, and individual capabilities of the system.
+  </p>
+
+  <p class="inter-small">
+    This means that the current Reazonex should not be perceived as an already completed AGI with an encyclopedic volume of knowledge.
+  </p>
+
+  <p class="inter-small">
+    Full-scale training requires significant resources.
+  </p>
+
+  <p class="inter-small">
+    A large amount of high-quality data is required, along with the use of capable LLMs to prepare and expand knowledge, as well as its verification and correction by specialists in different subject areas.
+  </p>
+
+  <p class="inter-small">
+    Another option is to release the system with some inaccuracies and gradually train it through interaction with users.
+  </p>
+
+  <p class="inter-small">
+    But this means a completely different approach: the system would gradually acquire new knowledge, correct errors, and build its own knowledge graph based on feedback.
+  </p>
+
+  <p class="inter-small">
+    This is precisely why <b>training is currently one of the main limitations of the project</b>.
+  </p><br>
+
+
+  <p class="inter-medium">2. Why We Believe Graph-Based Architectures Could Become the Next Generation of AI</p><br>
+
+  <p class="inter-small">
+    We are not claiming that transformers are useless.
+  </p>
+
+  <p class="inter-small">
+    On the contrary, it is precisely because of transformers that an enormous leap forward has taken place in the development of artificial intelligence.
+  </p>
+
+  <p class="inter-small">
+    But this approach has fundamental problems and limitations: the absence of precise logic, reasoning at the level of "most likely this is the case" or "this seems similar to that", i.e. simplified associative reasoning, errors, hallucinations, and so on.
+  </p>
+
+  <p class="inter-small">
+    Modern LLMs require enormous computational resources:
+  </p>
+
+  <ul class="inter-small">
+    <li>for training;</li>
+    <li>for storage;</li>
+    <li>for inference;</li>
+    <li>for scaling;</li>
+    <li>for updating knowledge.</li>
+  </ul>
+
+  <p class="inter-small">
+    The larger the model, the more expensive it becomes to operate.
+  </p>
+
+  <p class="inter-small">
+    At the same time, adding new knowledge to an already trained model is not always a simple process. We have article about this: <a href="https://projgasi.github.io/articles.html#slai" target="_blank">Why Continuous Self-Learning May Be a Core Requirement for Real AGI</a>
+  </p>
+
+  <p class="inter-small">
+    Therefore, we believe that <b>the next generation of intelligent systems will probably not be built solely around transformers</b>.
+  </p>
+
+  <p class="inter-small">
+    One of the possible directions we see is precisely <b>graph-based architectures similar to Reazonex</b>.
+  </p>
+
+  <p class="inter-small">
+    In such an architecture, knowledge can exist separately from the reasoning mechanism itself.
+  </p>
+
+  <p class="inter-small">
+    This makes it possible to add new knowledge, establish new relationships, verify them, and use them in reasoning without having to completely retrain the system every time.
+  </p>
+
+  <p class="inter-small">
+    If transformers can be compared to a student who simply memorizes material and then repeats it without understanding its meaning, Reazonex can be compared to a research scientist who has rules of logical thinking built into the system and, by applying them, can understand and process new information.
+  </p><br>
+
+
+  <p class="inter-medium">3. Why We Are Not Trying to Create an AGI-Level Reazonex Immediately</p><br>
+
+  <p class="inter-small">
+    Here we encounter a practical problem.
+  </p>
+
+  <p class="inter-small">
+    We are a small project.
+  </p>
+
+  <p class="inter-small">
+    Creating a full-fledged AGI with a huge amount of high-quality, verified knowledge from the outset is an extremely difficult task.
+  </p>
+
+  <p class="inter-small">
+    We would need enormous computational resources, large datasets, many LLMs to prepare the information, and specialists from different fields to verify it.
+  </p>
+
+  <p class="inter-small">
+    Therefore, we believe it is more realistic to move gradually.
+  </p>
+
+  <p class="inter-small">
+    Instead of trying to create a universal intelligence immediately, we can <b>first train Reazonex on a relatively small amount of knowledge and use it for specific tasks.</b>
+  </p>
+
+  <p class="inter-small">
+    Then gradually expand its capabilities.
+  </p>
+
+  <p class="inter-small">
+    And this is precisely where the idea of AI Proxy emerges.
+  </p><br>
+
+
+  <p class="inter-medium">4. AI Proxy with a Reazonex Core</p><br>
+
+  <p class="inter-small">
+    We have already written about this concept in a separate article: <a href="https://projgasi.github.io/articles.html#aiproxy" target="_blank">AI Proxy with a Fast Reasoner</a>.
+  </p>
+
+  <p class="inter-small">
+    At first glance, it may seem that the main purpose of an AI Proxy is to reduce the cost of tokens used by commercial LLMs.
+  </p>
+
+  <p class="inter-small">
+    This is indeed one of its advantages.
+  </p>
+
+  <p class="inter-small">
+    But for us, this is far from its most important function.
+  </p>
+
+  <p class="inter-small">
+    The main idea is to create a <b>corrective intelligent layer between the user and the LLM</b>.
+  </p>
+
+  <p class="inter-small">
+    The typical architecture today looks roughly like this:
+  </p>
+
+  <p class="inter-small">
+    The user asks a question — the question is sent to the model — the model generates an answer.
+  </p>
+
+  <p class="inter-small">
+    But what happens if the model makes a mistake?
+  </p>
+
+  <p class="inter-small">
+    Or if it invents something?
+  </p>
+
+  <p class="inter-small">
+    Or if the answer contradicts information the system already knows?
+  </p>
+
+  <p class="inter-small">
+    Or if the user sends a dangerous request?
+  </p>
+
+  <p class="inter-small">
+    In a conventional architecture, we largely rely on the LLM itself.
+  </p>
+
+  <p class="inter-small">
+    We propose adding Reazonex between the user and the model, already equipped with rules of logic and its own clean knowledge.
+  </p>
+
+  <p class="inter-small">
+    In this architecture, the LLM is no longer the only source of intelligence, but one of the tools used by the system.
+  </p><br>
+
+  <p class="inter-small">
+    Thus, Reazonex becomes a kind of <b>intelligent core</b>.
+  </p>
+
+  <p class="inter-small">
+    It decides what to do with a request:
+  </p>
+
+  <ul class="inter-small">
+    <li>answer independently;</li>
+    <li>use the cache;</li>
+    <li>query the knowledge graph;</li>
+    <li>combine several sources;</li>
+    <li>query an LLM;</li>
+    <li>use several models;</li>
+    <li>request additional information;</li>
+    <li>refuse to answer when confidence is insufficient.</li>
+  </ul><br>
+
+
+  <p class="inter-medium">5. The Main Function — Verifying LLM Responses</p><br>
+
+  <p class="inter-small">
+    But it is even more interesting to use Reazonex after receiving a response from an LLM.
+  </p>
+
+  <p class="inter-small">
+    Suppose the model has provided an answer.
+  </p>
+
+  <p class="inter-small">
+    We do not have to show it to the user immediately.
+  </p>
+
+  <p class="inter-small">
+    We can have Reazonex analyze the response and check:
+  </p>
+
+  <ul class="inter-small">
+    <li>logical sequence;</li>
+    <li>internal contradictions;</li>
+    <li>consistency with accumulated knowledge;</li>
+    <li>obvious factual errors;</li>
+    <li>consistency with the context;</li>
+    <li>possible hallucinations.</li>
+  </ul>
+
+  <p class="inter-small">
+    Different scenarios are then possible:
+  </p>
+
+  <ul class="inter-small">
+    <li>reject the response;</li>
+    <li>request a correction from the LLM;</li>
+    <li>query another source;</li>
+    <li>generate its own response;</li>
+    <li>inform the user that there is insufficient reliable information.</li>
+  </ul>
+
+  <p class="inter-small">
+    Thus, Reazonex becomes a <b>control layer over the LLM</b>.
+  </p><br>
+
+
+  <p class="inter-medium">6. AI Proxy Reduces the Risks Carried by LLMs</p><br>
+
+  <p class="inter-small">
+    This is precisely why, for us, AI Proxy is not simply a tool for saving tokens.
+  </p>
+
+  <p class="inter-small">
+    It allows us to address several problems of modern LLMs simultaneously.
+  </p>
+
+  <p class="inter-small">
+    <b>Hallucinations</b>
+  </p>
+
+  <p class="inter-small">
+    An LLM can confidently generate nonexistent facts. Reazonex can compare the information with already accumulated knowledge and identify contradictions.
+  </p>
+
+  <p class="inter-small">
+    <b>Logical Errors</b>
+  </p>
+
+  <p class="inter-small">
+    An LLM can reason incorrectly even when the correct information is available. Reazonex can independently verify the logic of the response.
+  </p>
+
+  <p class="inter-small">
+    <b>High Cost</b>
+  </p>
+
+  <p class="inter-small">
+    If the answer is already available in the cache or can be obtained from the system's own knowledge graph, there is no need to query a commercial LLM.
+  </p>
+
+  <p class="inter-small">
+    <b>Dangerous Content</b>
+  </p>
+
+  <p class="inter-small">
+    AI Proxy can analyze incoming requests and block dangerous requests before they are sent to the model.
+  </p>
+
+  <p class="inter-small">
+    <b>Dangerous Responses</b>
+  </p>
+
+  <p class="inter-small">
+    An LLM response can also be checked before it reaches the user.
+  </p>
+
+ <br>
+
+
+  <p class="inter-medium">7. And Here AI Proxy Becomes Part of Reazonex Training</p><br>
+
+  <p class="inter-small">
+    This is particularly important to us.
+  </p>
+
+  <p class="inter-small">
+    AI Proxy allows us to use existing LLMs for answers that Reazonex is not yet capable of providing independently.
+  </p>
+
+  <p class="inter-small">
+    But the results of these interactions can be used to expand Reazonex's own knowledge graph.
+  </p>
+
+  <p class="inter-small">
+    This creates a closed learning cycle.
+  </p>
+
+  <p class="inter-small">
+    A user may say:
+  </p>
+
+  <p class="inter-small">
+    <i>The answer is correct.</i>
+  </p>
+
+  <p class="inter-small">
+    Or:
+  </p>
+
+  <p class="inter-small">
+    <i>There is an error here. The correct answer is ...</i>
+  </p>
+
+  <p class="inter-small">
+    Both events are useful information.
+  </p>
+
+  <p class="inter-small">
+    An LLM may provide a good answer — after verification, it can be used as a source of new knowledge.
+  </p>
+
+  <p class="inter-small">
+    Reazonex may detect a contradiction — this also becomes training material.
+  </p>
+
+  <p class="inter-small">
+    Gradually, the system receives more and more information and updates its knowledge graph.
+  </p>
+
+  <p class="inter-small">
+    This is where one of the fundamental characteristics of our approach lies.
+  </p>
+
+  <p class="inter-small">
+    By self-learning, we do not mean constantly changing the weights of a huge neural model.
+  </p>
+
+  <p class="inter-small">
+    In the graph-based architecture, Reazonex can directly modify the <b>structure of knowledge</b>.
+  </p>
+
+  <p class="inter-small">
+    It can add:
+  </p>
+
+  <ul class="inter-small">
+    <li>new facts;</li>
+    <li>new relationships, including their strength and type;</li>
+    <li>new rules;</li>
+    <li>corrections;</li>
+    <li>context;</li>
+    <li>confidence assessments;</li>
+    <li>verification results;</li>
+    <li>user feedback.</li>
+  </ul>
+
+  <p class="inter-small">
+    In other words, Reazonex can quickly acquire new knowledge and use it in its subsequent reasoning.
+  </p>
+
+  <p class="inter-small">
+    This potentially makes it possible to avoid a situation in which adding a single new fact requires launching a long and expensive retraining process for a large model.
+  </p><br>
+
+
+  <p class="inter-medium">8. This Is the Strategy Behind the Project</p><br>
+
+  <p class="inter-small">
+    This creates an interesting situation.
+  </p>
+
+  <p class="inter-small">
+    We cannot simply take today's Reazonex and train it to AGI level using an enormous amount of knowledge.
+  </p>
+
+  <p class="inter-small">
+    But we can create a <b>small Reazonex</b> capable of working within a limited area of knowledge.
+  </p>
+
+  <p class="inter-small">
+    Then give it access to LLMs through AI Proxy.
+  </p>
+
+  <p class="inter-small">
+    The LLM will help solve complex tasks.
+  </p>
+
+  <p class="inter-small">
+    Reazonex will verify the answers.
+  </p>
+
+  <p class="inter-small">
+    Users will provide feedback.
+  </p>
+
+  <p class="inter-small">
+    The knowledge graph will gradually expand.
+  </p>
+
+  <p class="inter-small">
+    And together with it, the capabilities of Reazonex itself will expand.
+  </p>
+
+  <p class="inter-small">
+    Thus:
+  </p>
+
+  <p class="inter-small">
+    <b>AI Proxy becomes not only a product, but also infrastructure for the gradual training of Reazonex.</b>
+  </p><br>
+
+
+  <p class="inter-medium">9. What We See in the Future</p><br>
+
+  <p class="inter-small">
+    Of course, we cannot claim that this exact architecture will necessarily become the future of AGI.
+  </p>
+
+  <p class="inter-small">
+    But this is our current direction and our hypothesis.
+  </p>
+
+  <p class="inter-small">
+    We assume that, over time, the roles of these components may change.
+  </p>
+
+  <p class="inter-small">
+    <b>Today, LLM is the Main Intelligence.</b>
+  </p>
+
+  <p class="inter-small">
+    In the future, this could potentially look the other way around:
+  </p>
+
+  <p class="inter-small">
+    <b>Reazonex or a similar graph-based architecture could become the core of AGI</b>, responsible for:
+  </p>
+
+  <ul class="inter-small">
+    <li>precise reasoning;</li>
+    <li>memory;</li>
+    <li>knowledge;</li>
+    <li>relationships between knowledge;</li>
+    <li>planning;</li>
+    <li>information verification;</li>
+    <li>decision-making.</li>
+  </ul>
+
+  <p class="inter-small">
+    At the same time, the LLM could remain a very powerful tool, but perform a different function:
+  </p>
+
+  <ul class="inter-small">
+    <li>generate ideas;</li>
+    <li>find associations;</li>
+    <li>propose alternatives;</li>
+    <li>work with natural language;</li>
+    <li>transform the internal result into text that is understandable to the user.</li>
+  </ul>
+
+  <p class="inter-small">
+    In other words, the LLM does not necessarily have to disappear.
+  </p>
+
+  <p class="inter-small">
+    <b>Its role may simply change.</b>
+  </p><br>
+
+
+  <p class="inter-medium">10. From "LLM as the Brain" to "LLM as a Tool"</p><br>
+
+  <p class="inter-small">
+    Today's AI architecture is largely built around the idea:
+  </p>
+
+  <p class="inter-small">
+    <i>"Let's send a request to a large language model and get an answer."</i>
+  </p>
+
+  <p class="inter-small">
+    We assume that the next step could be:
+  </p>
+
+  <p class="inter-small">
+    <i>"Let's first give a system with clear logic the ability to understand for itself what needs to be done, and only then use an LLM where it is actually necessary."</i>
+  </p>
+
+  <p class="inter-small">
+    This represents a fundamentally different relationship with the language model.
+  </p>
+
+  <p class="inter-small">
+    The LLM ceases to be the only center of the system.
+  </p>
+
+  <p class="inter-small">
+    It becomes one of the available tools responsible for associations, hypotheses, and text generation.
+  </p>
+
+  <p class="inter-small">
+    And the intelligent core is responsible for determining how and when to use this tool.
+  </p><br>
+
+
+  <p class="inter-medium">Conclusion</p><br>
+
+  <p class="inter-small">
+    We are not claiming that today's Reazonex is already AGI.
+  </p>
+
+  <p class="inter-small">
+    <b>That would be a premature statement.</b>
+  </p>
+
+  <p class="inter-small">
+    Today, Reazonex has a working architecture, a reasoning mechanism, and a small amount of test knowledge. The main problem now is large-scale training.
+  </p>
+
+  <p class="inter-small">
+    Full-scale training requires significant resources, high-quality data, capable LLMs, and experts in various fields, or gradual training through interaction with users.
+  </p>
+
+  <p class="inter-small">
+    Therefore, we are looking for a realistic path forward.
+  </p>
+
+  <p class="inter-small">
+    <b>And AI Proxy with a Reazonex core is precisely such a path for us.</b>
+  </p>
+
+  <p class="inter-small">
+    It allows us to simultaneously:
+  </p>
+
+  <ul class="inter-small">
+    <li>reduce the number of requests to expensive LLMs;</li>
+    <li>use the cache and our own knowledge graph;</li>
+    <li>handle some requests independently;</li>
+    <li>verify LLM responses;</li>
+    <li>detect errors and contradictions;</li>
+    <li>reduce the risk of hallucinations;</li>
+    <li>block dangerous content;</li>
+    <li>receive user feedback;</li>
+    <li>gradually expand our own knowledge graph;</li>
+    <li>and simultaneously develop Reazonex as an independent intelligent system.</li>
+  </ul>
+
+  <p class="inter-small">
+    Essentially, we are trying to build a <b>bridge between today's world of LLMs and a possible future of AGI</b>.
+  </p>
+
+  <p class="inter-small">
+    Today, Reazonex can use LLMs where it lacks sufficient knowledge.
+  </p>
+
+  <p class="inter-small">
+    In the future, we want to reach a system in which <b>Reazonex or a similar architecture is responsible for reasoning and knowledge, while the LLM is used as a powerful associative and language tool.</b>
+  </p>
+
+  <p class="inter-small">
+    And if this hypothesis proves correct, the future of AI may not lie in endlessly increasing the size of a single model, but in creating <b>hybrid intelligent systems in which different architectures perform different functions, while the key factor is not the number of parameters, but the system's ability to reason independently, remember, verify, and learn.</b>
+  </p><br>
+
+<p class="inter-small">
+    <a href="https://projgasi.github.io/index.html#support" target="_blank">Support the project</a> — and help build a safe future.
+  </p><br>
+
+
+  <p class="inter-small">
+    Published: August 26, 2026
+  </p>
+
+
+</div>
+
+
+
+
+
+
+
 
 
 
