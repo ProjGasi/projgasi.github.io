@@ -89,7 +89,7 @@ body {
   padding-top: 60px; 
 }
 
-
+.intro-paragraph { text-indent: 2em; }
 
 .qr-row {
   display: flex;
