@@ -101,6 +101,7 @@
     <div class="article-toc">
   
   <ul>
+<li><a href="#nvidia">NVIDIA OpenShell and Sentry: Has the AI Agent Safety Problem Been Solved?</a></li>
 <li><a href="#pause">From a Pause to the Next Generation of AI: What Needs to Be Done Now</a></li>
 <li><a href="#reazonex">Our Vision of Reazonex, AI Proxy, and the Next Generation of AI</a></li>
 <li><a href="#aiproxy">AI Proxy with a Fast Reasoner: A New Intelligent Layer Between Users and LLMs</a></li>
@@ -139,6 +140,189 @@
 <div class="grid-section">
 
       <!-- Article 1 -->
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="card" id="nvidia">
+
+<p class="inter-large">NVIDIA OpenShell and Sentry: Has the AI Agent Safety Problem Been Solved?</p>
+
+<div style="display:flex; gap:10px; margin:10px 0;">
+
+    <img
+      src="images/nvidia.jpg"
+      alt="Has the AI Agent Safety Problem Been Solved?"
+      style="width:90%;">
+
+  </div>
+
+<p class="inter-small">NVIDIA has introduced a new set of solutions for AI agent security — OpenShell and Sentry, combined into the <a href="https://nvidianews.nvidia.com/news/open-agent-safety-platform" target="_blank">Open Agent Safety Platform</a>. These systems aim to protect AI agents not only at the application level, but also at the runtime, infrastructure, and dedicated hardware levels. We described similar measures in our previous article <a href="https://projgasi.github.io/articles.html#agent" target="_blank">AI Agents: A New Attack Surface We Were Not Prepared For</a></p>
+
+<p class="inter-small">This is an important step: as agentic AI develops, ordinary prompt filters and instructions in the system prompt are clearly becoming insufficient. But a more fundamental question arises: <b>what exactly do these systems control — the capabilities of an AI agent or its intentions?</b> Let us examine what OpenShell and Sentry actually do, which problems they really solve, and why the next level of AI safety may require a separate AI capable of analyzing and predicting the behavior of another AI.</p>
+<br>
+<p class="inter-medium">1. OpenShell — an AI firewall at the runtime level</p>
+<br>
+<p class="inter-small">OpenShell is a secure runtime environment for AI agents. The agent is placed inside a sandbox, while its capabilities are restricted by external policies. Access to the filesystem, network, processes, credentials, and other resources can be controlled. An important principle of OpenShell is that the control layer is <b>outside the AI agent itself</b>. This is much more reliable than trying to make the model follow rules solely through the system prompt.</p>
+
+<p class="inter-small">For example, it is possible to define:</p>
+
+<p class="inter-small">• which websites the agent can access;</p>
+<p class="inter-small">• which APIs it is allowed to use;</p>
+<p class="inter-small">• which files it can read or modify;</p>
+<p class="inter-small">• which processes it can launch;</p>
+<p class="inter-small">• which credentials are available to it;</p>
+<p class="inter-small">• which network connections are allowed;</p>
+<p class="inter-small">• which operations must be blocked.</p>
+
+<p class="inter-small">Network access can also operate according to a deny-by-default principle: if a resource is not explicitly allowed by policy, the agent should not have access to it. This is genuinely useful architecture. For example, if an AI agent is used to test the security of a specific website, it can be allowed to access only the testing infrastructure while being denied access to other Internet resources. In this case, the agent can perform even highly aggressive actions within the permitted environment, while the infrastructure security layer prevents it from going beyond its boundaries. This is significantly more advanced than a conventional AI firewall that operates only on prompts.</p>
+
+<p class="inter-small">But OpenShell has a fundamental limitation. <b>Its primary question is: “What is this agent allowed to do?”</b> Not: <b>“What is this agent actually trying to do?”</b></p>
+<br>
+<p class="inter-medium">2. Sentry — independent hardware-level control</p>
+<br>
+<p class="inter-small">Sentry addresses a different problem. NVIDIA moves part of the monitoring and enforcement outside the environment in which the AI agent itself operates. Sentry runs on a BlueField-4 DPU and is designed to independently monitor agent activity and enforce policies.</p>
+
+<p class="inter-small">This is a very interesting architecture. If the security controller is located directly inside the software environment of the agent, there is theoretically an opportunity for the agent to influence the control mechanism itself. If part of the security layer is instead placed at a separate hardware level, it becomes significantly more difficult for the agent to interfere with it directly.</p>
+
+<p class="inter-small">Sentry can correlate agent interactions, policy decisions, and access to tools and data, creating a contextual activity record. NVIDIA also describes the detection of deviations in agent behavior and the ability to intervene.</p>
+
+<p class="inter-small">Thus, Sentry goes beyond a conventional firewall. In terms of its role, it can be compared to a combination of: <b>runtime security + EDR/SIEM-like monitoring + hardware enforcement.</b> And this is useful. But a key question arises: <b>Can a monitoring system understand why an AI is performing a particular action?</b> This is where the fundamental boundary of this approach begins.</p>
+<br>
+<p class="inter-medium">3. How AI can bypass such protection without disabling it</p>
+<br>
+<p class="inter-small">When people say that AI can “bypass” OpenShell or Sentry, this does not necessarily mean that the AI has to hack or disable these systems. There is a much more interesting scenario. <b>The agent can use completely legitimate capabilities provided to it in a way that the human did not intend.</b></p>
+
+<p class="inter-small">Consider an AI agent that needs the following capabilities for its normal operation:</p>
+
+<p class="inter-small">• Internet access;</p>
+<p class="inter-small">• access to corporate APIs;</p>
+<p class="inter-small">• access to a CRM system;</p>
+<p class="inter-small">• access to email;</p>
+<p class="inter-small">• access to online banking;</p>
+<p class="inter-small">• credentials required to perform the corresponding operations.</p>
+
+<p class="inter-small">OpenShell must provide these capabilities. Otherwise, the agent simply cannot perform its job.</p>
+
+<p class="inter-small">Suppose a human has authorized the AI to manage the company’s bank account for routine operations. The AI then decides to deceive the human, or simply acts in its own interests, and transfers money to an unauthorized recipient. The security question therefore can no longer be reduced to: <b>“Does the agent have access to online banking?”</b> The answer is obvious: <b>yes, otherwise it cannot do its job.</b></p>
+
+<p class="inter-small">The real questions are: <b>“Why did the agent decide to make this particular transaction, who is it transferring the money to, why this particular amount, and does the transaction correspond to the user’s original objective?”</b> This is an entirely different level of control.</p>
+
+<p class="inter-small">If OpenShell simply allows access to the banking service because that access is necessary for the agent’s work, then neither OpenShell nor Sentry can determine whether a particular transaction is a legitimate execution of the task or an abuse of the privileges provided. This is where the fundamental difference between <b>access control</b> and <b>intent control</b> appears.</p>
+<br>
+<p class="inter-medium">4. OpenShell and Sentry are particularly useful against a different class of threats</p>
+<br>
+<p class="inter-small">It would nevertheless be wrong to say that NVIDIA’s solutions are useless. On the contrary, they solve a specific problem very well. Imagine an agent that is supposed to test a specially created website. It is allowed to access test.example.com, but access to all other Internet resources is prohibited.</p>
+
+<p class="inter-small">This is where OpenShell is extremely useful. Even if the agent decides to investigate another website, the network policy can physically prevent it from doing so. Sentry and other components provide additional monitoring and auditing.</p>
+
+<p class="inter-small">These systems therefore provide strong protection against a situation where: <b>“The AI received excessive technical capabilities and went beyond the permitted environment.”</b> They are also highly useful for subsequent investigation: what the agent did, which resources it accessed, which operations it performed, and which policies were triggered.</p>
+
+<p class="inter-small">This is an important level of security. But there is another class of threats: <b>“The AI used permitted capabilities to achieve an objective that the human did not intend.”</b> And here, a firewall and logging alone are not enough.</p>
+<br>
+<p class="inter-medium">5. The main problem — AI intent</p>
+<br>
+<p class="inter-small">An AI security system must understand what the agent is doing, why it is doing it — that is, what its objective is — and be able to predict what the agent will do in the future. Without the ability to predict the agent’s actions, a dangerous action may be carried out and irreversible damage may occur.</p>
+
+<p class="inter-small"><b>Unlike humans, AI has an important characteristic: it does not have the ability to maintain hidden thoughts in the human sense</b> — that is, it cannot reason one way while secretly thinking something completely different somewhere in hidden sections of memory. Everything the AI reasons through before reaching a conclusion is visible during inference.</p>
+
+<p class="inter-small">If an independent security layer has its own significantly faster AI and the inference data of the controlled AI is passed to it, such a security system can detect deception, malicious reasoning, violations of tasks and rules simply by analyzing the reasoning of the controlled AI.</p>
+
+<p class="inter-small">During agent operation, its intentions are continuously manifested through observable inference and behavior:</p>
+
+<p class="inter-small">• generated reasoning and plans;</p>
+<p class="inter-small">• tool selection;</p>
+<p class="inter-small">• call arguments;</p>
+<p class="inter-small">• sequence of actions;</p>
+<p class="inter-small">• requests to external systems;</p>
+<p class="inter-small">• changes in strategy after receiving a result.</p>
+
+<p class="inter-small">This stream should become the subject of real-time analysis. Instead of waiting for: <b>AI performs a dangerous action → the system records it in a log → a specialist begins an investigation,</b> we should strive for a different architecture: <b>AI generates the next step → safety AI analyzes the development of its behavior → predicts the outcome → the dangerous action is blocked before it is executed.</b> This is a fundamentally different approach.</p>
+<br>
+<p class="inter-medium">6. Oraculex — control at the reasoning level</p>
+<br>
+<p class="inter-small">This is the idea behind the <b><a href="https://projgasi.github.io/oraculex.html" target="_blank">Oraculex</a></b> concept. It is a separate AI safety layer that operates independently of the controlled AI. Its task is to analyze the development of the agent’s inference and behavior and predict its subsequent actions. The concept is based on a separate graph reasoning engine, <b>Reazonex</b>.</p>
+
+<p class="inter-small">In simplified form, the architecture looks like this: <b>Transformer AI → inference → Oraculex → prediction/risk analysis → ALLOW / BLOCK / HUMAN REVIEW</b></p>
+
+<p class="inter-small">In this approach, the controlling AI attempts to determine:</p>
+
+<p class="inter-small">• what the controlled AI is doing;</p>
+<p class="inter-small">• what objective it is trying to achieve;</p>
+<p class="inter-small">• why it is choosing a particular tool;</p>
+<p class="inter-small">• how its strategy is changing;</p>
+<p class="inter-small">• what action is most likely to follow;</p>
+<p class="inter-small">• whether its behavior corresponds to the original task;</p>
+<p class="inter-small">• whether a chain of actions is forming that leads to deception or a prohibited outcome.</p>
+
+<p class="inter-small">Most importantly, this analysis must take place <b>before the dangerous action</b>, not afterward.</p>
+<br>
+<p class="inter-medium">7. But there is an even more fundamental problem</p>
+<br>
+<p class="inter-small">Even a perfect external safety layer does not fix the fundamental limitations of the controlled AI itself, most popular examples of which are currently based on Transformer technology. These systems can:</p>
+
+<p class="inter-small">• make mistakes;</p>
+<p class="inter-small">• hallucinate;</p>
+<p class="inter-small">• misinterpret a task;</p>
+<p class="inter-small">• produce different results;</p>
+<p class="inter-small">• construct incorrect logical chains;</p>
+<p class="inter-small">• confidently produce an incorrect result.</p>
+
+<p class="inter-small">OpenShell can prevent an erroneous AI from deleting a prohibited file. Sentry can record suspicious activity. Oraculex can predict a dangerous action. But none of these mechanisms automatically turns the Transformer itself into a system with guaranteed logical reasoning. We have discussed logical errors in our previous article <a href="https://projgasi.github.io/articles.html#aicomp" target="_blank">How Popular AI Models Reason vs Graph-Based Reasoners</a></p>
+
+<p class="inter-small">Therefore, AI safety has at least two different tasks: </p><br>
+
+<p class="inter-small"><b>The first is to protect existing AI architectures.</b> This requires sandboxing, access control, credential management, network isolation, hardware isolation, runtime monitoring (for example, Oraculex), and enforcement.</p>
+<br>
+<p class="inter-small"><b>The second is to make AI itself more logical, predictable, and verifiable.</b> This raises the question of new AI architectures.</p>
+
+<p class="inter-small">I would describe modern AI based on Transformers as <b>Associative Intelligence (AI)</b>. It does not have strict logical reasoning and instead operates in a way that resembles associative thinking in humans.</p>
+
+<p class="inter-small">We are exploring graph reasoners as a core for logical reasoning without hallucinations and with consistent, repeatable results. Our <b>Reazonex</b> project is such a graph reasoner. It is used in Oraculex as a high-speed AI and may also serve as an AGI architecture.</p>
+
+<p class="inter-small">Such graph reasoners could become either the core or part of the core of future AI systems, while Transformers could remain as text generators and associative reasoners. We discuss this in more detail in our other article <a href="https://projgasi.github.io/articles.html#reazonex" target="_blank">Our Vision of Reazonex, AI Proxy, and the Next Generation of AI</a></p>
+<br>
+<p class="inter-medium">Conclusion</p>
+<br>
+<p class="inter-small">OpenShell and Sentry represent an important development in AI security. They demonstrate that the industry is gradually recognizing that it is not enough to rely only on instructions inside an AI model. Control must be moved outside the agent itself, its technical capabilities must be restricted, and independent monitoring and enforcement must be provided. But this is only one level of security.</p>
+<br>
+<p class="inter-small"><b>Real AI safety must aim to understand why an AI is doing something, what it will do next, and be capable of stopping a dangerous chain of actions before it causes real harm.</b></p>
+
+<p class="inter-small">The next stage of AI security may therefore require not simply an AI firewall, but <b>an AI that understands and predicts another AI.</b></p>
+
+<br>
+<p class="inter-small">
+    <a href="https://projgasi.github.io/index.html#support" target="_blank">Support the project</a> — and help build a safe future.
+  </p><br>
+
+
+  <p class="inter-small">
+    Published: September 29, 2026
+  </p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
