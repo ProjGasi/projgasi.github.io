@@ -101,6 +101,7 @@
     <div class="article-toc">
   
   <ul>
+<li><a href="#phase3">Dailogix: Phase 3 Completed. A New Vision for the Reazonex-Based Client Application</a></li>
 <li><a href="#hidden">When AI Starts Hiding Its Thoughts</a></li>
 <li><a href="#nvidia">NVIDIA OpenShell and Sentry: Has the AI Agent Safety Problem Been Solved?</a></li>
 <li><a href="#pause">From a Pause to the Next Generation of AI: What Needs to Be Done Now</a></li>
@@ -141,6 +142,177 @@
 <div class="grid-section">
 
       <!-- Article 1 -->
+
+
+
+
+
+
+
+
+
+
+
+<div class="card" id="phase3">
+
+<div style="display:flex; gap:10px; margin:10px 0;">
+
+    <img
+      src="images/Dailogixproxy.jpg"
+      alt="When AI Starts Hiding Its Thoughts"
+      style="width:90%;">
+
+  </div>
+
+<p class="inter-large">Dailogix: Phase 3 Completed. A New Vision for the Reazonex-Based Client Application</p>
+<br>
+<p class="inter-small">We have completed another stage in the development of Dailogix — <b>Phase 3 — Client-Side Development</b>. At the same time, we have decided to change the future direction of client application development by integrating our AI proxy powered by Reazonex.</p>
+<br>
+<p class="inter-medium">Phase 3 — Client-Side Development: Results</p>
+<br>
+<p class="inter-small">At this stage, we focused on developing the Dailogix client-side component, which will enable threats to be detected directly during AI interactions and the necessary data to be securely transmitted to the processing and analytics server.</p>
+
+<p class="inter-small">The following work was completed as part of Phase 3:</p>
+
+<p class="inter-small">• Implementation of a log parser and API proxy.</p>
+<p class="inter-small">• Development of mechanisms for rapid vulnerability detection based on anomalies and predefined criteria.</p>
+<p class="inter-small">• Implementation of secure communication with the processing and analytics server.</p>
+<p class="inter-small">• Preparation of source code and integration guidelines for clients who cannot use the standard client-side solution.</p>
+
+<p class="inter-small"><b>Outcome:</b> Fully functional client agent for pilot use.</p>
+<br>
+<p class="inter-medium">Why Did We Decide to Change the Product Concept?</p>
+<br>
+<p class="inter-small">Dailogix was originally conceived as a platform for continuous global red teaming and threat intelligence sharing. Its purpose is to bring together the results of vulnerability discovery, adversarial prompts, and other dangerous scenarios so that the knowledge obtained can be used to test and protect other participants in the ecosystem.</p>
+
+<p class="inter-small">However, our research has shown that not all AI users and providers are willing to deploy an additional product solely for security purposes, even if it consumes minimal computing resources.</p>
+
+<p class="inter-small">We believe that solving this problem requires more than simply making installation and integration easier. We need to offer clients broader value.</p>
+
+<p class="inter-small">If an application can do more than protect AI — if it can also <b>improve response accuracy, accelerate request processing, and reduce the number of calls to large language models (LLMs)</b> — adopting it becomes significantly more attractive.</p>
+
+<p class="inter-small">That is why we have decided to integrate our AI proxy powered by Reazonex — a graph-based AI system — into the Dailogix client application.</p>
+<br>
+<p class="inter-medium">A New Vision for Dailogix: Three Functions in One Product</p>
+<br>
+<p class="inter-small">We envision the Dailogix client application as a combination of three key components:</p>
+
+<p class="inter-small">• <b>AI proxy powered by Reazonex</b> — preliminary request processing, clarification of insufficiently precise information, answering certain questions without calling an LLM, and verification of its outputs.</p>
+
+<p class="inter-small">• <b>Global red teaming &amp; threat intelligence</b> — continuous vulnerability detection and threat intelligence sharing among ecosystem participants.</p>
+
+<p class="inter-small">• <b>AI firewall</b> — an additional layer of protection designed to detect dangerous requests, anomalies, and potentially unsafe AI behavior.</p>
+
+<p class="inter-small">This approach will make it possible to combine improved AI efficiency and security within a single client application. At the same time, global threat intelligence sharing will remain a core part of Dailogix rather than becoming a separate product that users must install independently.</p>
+<br>
+<p class="inter-medium">How Will the Reazonex-Based AI Proxy Interact with LLMs?</p>
+<br>
+<p class="inter-small">We see the proxy operating in three main areas: request processing, independent responses powered by Reazonex, and verification of results obtained from large language models.</p>
+<br>
+<p class="inter-medium">1. Clarifying Imprecise Requests</p>
+
+<p class="inter-small">When a user asks an insufficiently precise question, a conventional language model may begin reasoning based on incomplete information, list possible scenarios, or ask follow-up questions. This requires additional inference steps and increases computational costs.</p>
+
+<p class="inter-small">The Reazonex-based AI proxy will be able to analyze a request in advance and determine whether there is enough information to provide a meaningful answer.</p>
+
+<p class="inter-small">For example, a user says: “I have a stomachache.”</p>
+
+<p class="inter-small">Instead of immediately generating a lengthy answer listing possible causes, the proxy can ask for additional information:</p>
+
+<p class="inter-small">• Where exactly does it hurt?</p>
+<p class="inter-small">• When did the pain start?</p>
+<p class="inter-small">• Do you have a fever?</p>
+
+<p class="inter-small">Once more complete information has been obtained, the system will be able either to formulate an answer independently, if it has sufficient knowledge and a sound logical basis, or to forward the clarified request to an LLM.</p>
+
+<p class="inter-small">The main idea is to <b>avoid launching computationally expensive inference until the request is sufficiently well-defined to address the task at hand.</b></p>
+
+<p class="inter-small">Instead of requiring several rounds of interaction between the user and the LLM, the proxy will be able to handle part of the preliminary work. This could reduce the number of calls to the large model, decrease the number of generated tokens, and eliminate unnecessary reasoning steps.</p>
+<br>
+<p class="inter-medium">2. Answering Questions Without Calling a Large Language Model</p>
+
+<p class="inter-small">As we have already noted in a separate article about Reazonex, our goal is to create a fast and accurate AI system capable of solving certain tasks without constantly relying on transformer models. <a href="https://projgasi.github.io/articles.html#aiproxy" target="_blank">Article: AI Proxy with a Fast Reasoner</a></p>
+
+<p class="inter-small">Integrated into the AI proxy, Reazonex will be able to process requests independently whenever its knowledge graph contains sufficient information and relationships to support a justified answer.</p>
+
+<p class="inter-small">This will make it possible to distribute tasks between systems according to their capabilities:</p>
+
+<p class="inter-small">• Reazonex processes suitable requests using its knowledge graph and logical inference mechanisms. <b>Reazonex is a fully-fledged AI system and does not require accelerators to operate.</b></p>
+
+<p class="inter-small">• The LLM is engaged when broad language capabilities, complex context interpretation, or additional generation are required.</p>
+
+<p class="inter-small">• The AI proxy coordinates interactions between the components and determines when information needs to be clarified, an LLM needs to be called, or additional verification is required.</p>
+
+<p class="inter-small">As a result, the LLM will no longer have to perform all the work independently. The proxy will be able to handle part of the preliminary processing and routine tasks, potentially reducing latency and inference costs.</p>
+<br>
+<p class="inter-medium">3. Checking the Logic and Consistency of LLM Responses</p>
+
+<p class="inter-small">The third important function of the proxy is verifying the outputs of large language models.</p>
+
+<p class="inter-small">LLMs can generate convincing-sounding answers that nevertheless contain logical errors, contradictions, or conclusions unsupported by the original data.</p>
+
+<p class="inter-small">Reazonex will be able to analyze the responses received, compare their claims against its knowledge graph, and check the logical consistency of the available information.</p>
+
+<p class="inter-small">If a contradiction or lack of information is detected, the proxy will be able to request additional explanations, re-verification, or a corrected answer from the LLM. If necessary, it will be able to ask the user for clarification.</p>
+
+<p class="inter-small">This will create an additional quality-control layer between the language model and the end user.</p>
+<br>
+<p class="inter-medium">Reazonex Will Evolve Alongside Its Users</p>
+<br>
+<p class="inter-small">Another promising opportunity lies in accumulating knowledge through interactions between users and LLMs.</p>
+
+<p class="inter-small">Every conversation can contain new facts, clarifications, corrections, and relationships between concepts. This information will be used to further develop the Reazonex knowledge graph.</p>
+
+<p class="inter-small">Unlike an approach in which acquiring new knowledge requires lengthy retraining of the entire transformer model, the Reazonex graph architecture makes it possible to introduce changes quickly and without interruptions by adding and modifying nodes, relationships, and their properties.</p>
+
+<p class="inter-small">This creates an opportunity for the system to evolve gradually based on real-world usage.</p>
+
+<p class="inter-small">However, automatically expanding the graph must not mean unconditionally accepting every user statement or LLM response as true. New information must be verified, its provenance taken into account, contradictions identified, and erroneous or deliberately malicious information prevented from entering the knowledge graph.</p>
+
+<p class="inter-small">This is particularly important for Dailogix: verification and quality-control mechanisms can simultaneously improve the proxy's usefulness and reduce the risks associated with accumulating unreliable data.</p>
+<br>
+<p class="inter-medium">Security and Efficiency as a Unified Architecture</p>
+<br>
+<p class="inter-small">We view the integration of Reazonex not as a departure from the original Dailogix concept, but as its evolution.</p>
+
+<p class="inter-small">Global red teaming and threat intelligence sharing help discover new attack methods and distribute information about them among ecosystem participants. The AI firewall provides additional control over AI interactions. The AI proxy, in turn, improves request processing, verifies results, and reduces unnecessary workloads on large language models.</p>
+
+<p class="inter-small">Together, these components form a more comprehensive approach to AI usage:</p>
+
+<p class="inter-small">• <b>Efficiency:</b> Fewer unnecessary LLM calls and potentially lower inference costs.</p>
+
+<p class="inter-small">• <b>Quality:</b> Preliminary request clarification and additional response verification.</p>
+
+<p class="inter-small">• <b>Security:</b> Vulnerability detection, anomaly analysis, and the application of accumulated threat intelligence.</p>
+
+<p class="inter-small">• <b>Continuous improvement:</b> Development of the Reazonex knowledge graph based on verified information obtained during operation.</p>
+<br>
+<p class="inter-medium">What Comes Next?</p>
+<br>
+<p class="inter-small">Completing Phase 3 has given us a functional client agent ready for pilot use. We now intend to develop it into an integrated AI proxy that combines the capabilities of Reazonex, Dailogix security mechanisms, and global threat intelligence sharing.</p>
+
+<p class="inter-small">We believe the future of AI security lies not only in detecting attacks and blocking dangerous actions. It is equally important to build architectures that help AI operate more accurately, efficiently, and predictably.</p>
+
+<p class="inter-small"><b>Our goal is to make security a natural part of AI infrastructure — one that not only protects the system but also increases the practical value of using it.</b></p>
+
+
+<br>
+<p class="inter-small">
+    <a href="https://projgasi.github.io/index.html#support" target="_blank">Support the project</a> — and help build a safe future.
+  </p><br>
+
+
+  <p class="inter-small">
+    Published: October 15, 2026
+  </p>
+
+
+</div>
+
+
+
+
+
 
 
 
