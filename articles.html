@@ -101,6 +101,7 @@
     <div class="article-toc">
   
   <ul>
+<li><a href="#reazonex-faq">Reazonex: Answers to Frequently Asked Questions</a></li>
 <li><a href="#phase3">Dailogix: Phase 3 Completed. A New Vision for the Reazonex-Based Client Application</a></li>
 <li><a href="#hidden">When AI Starts Hiding Its Thoughts</a></li>
 <li><a href="#nvidia">NVIDIA OpenShell and Sentry: Has the AI Agent Safety Problem Been Solved?</a></li>
@@ -150,21 +151,104 @@
 
 
 
+<div class="card" id="reazonex-faq">
+
+<p class="inter-large">Reazonex: Answers to Frequently Asked Questions</p>
+
+<div style="display:flex; gap:10px; margin:10px 0;">
+
+    <img
+      src="images/Reazonex_faq.jpg"
+      alt="Reazonex"
+      style="width:90%;">
+
+  </div>
+
+<p class="inter-small">We have been receiving questions about Reazonex. Here are the answers to the most frequently asked questions:</p>
+<br>
+<p class="inter-medium">1. The AI Architecture Implemented in Reazonex</p>
+
+<p class="inter-small">This is neither a symbolic nor a neuro-symbolic reasoner. And, of course, it is not a Transformer. Its architecture is closer to a GNN, but the more accurate term is MLGNN (Multy Layer Graph Neural Network). Graph nodes have properties, while connections (edges) have properties and fields for additional information. There are also connections between node and edge properties, each with its own properties. This forms a new Multy Layer architecture. Nodes can contain entities at different levels of scale, from general to narrowly semantic.</p>
+<br>
+<p class="inter-medium">2. What Tasks Is Reazonex Suitable For?</p>
+
+<p class="inter-small">GNNs are generally considered poorly suited to serving as AGI, i.e., general-purpose AI, and suitable for solving highly specialized tasks. We have managed to develop principles for representing any content, any entities, and their interactions within our MLGNN graph, i.e., any human knowledge. Initially, we were working on creating a fast graph-based reasoner to assess the safety of prompts and model responses. However, during our research and testing, we came to the conclusion that we had created a new architecture capable of serving as general-purpose AI.</p>
+<br>
+<p class="inter-medium">3. Self-Learning</p>
+
+<p class="inter-small">We have implemented a self-learning mechanism in Reazonex, i.e., the ability to add, delete, and modify nodes, connections, and properties on the fly, without retraining the entire graph or spending time on it. Self-learning is an integral part and possibly a key feature of full-fledged AGI. This is a major strength of Reazonex, since new knowledge can be added in just a few database queries, unlike Transformers, where new knowledge does not enter the weights but accumulates in notes and external memory until the retraining process. We covered this topic separately in an article: <a href="https://projgasi.github.io/articles.html#slai" target="_blank">Why Continuous Self-Learning May Be a Core Requirement for Real AGI</a></p>
+<br>
+<p class="inter-medium">4. Similarities to the Brain</p>
+
+<p class="inter-small">From the perspective of <b>structural biology and brain topology</b>, graph-based AI is indeed much closer to the actual architecture of the human brain than a classical Transformer. The key difference is that a Transformer operates on the principle of a <b>fully connected graph (dense/global attention)</b>, whereas the brain and graph neural networks (GNNs) operate on the principle of <b>sparse connections (sparse/local connectivity)</b>.</p>
+
+<p class="inter-small"><b>Transformer:</b> When an attention layer (Self-Attention) processes a token, it literally calculates its mathematical relationship with <b>every other token</b> in the context window. If your context contains 100,000 words, the computer calculates 100,000 relationships for <i>each</i> word.</p>
+
+<p class="inter-small"><b>The Brain:</b> The human brain contains approximately <b>86 billion neurons</b>. If the brain worked like a Transformer, every neuron would be directly connected to each of the other 86 billion neurons. Our skulls would simply explode from the number of "wires," and a single impulse would consume the energy of a small power plant. In reality, each neuron is connected to an average of "only" <b>10,000 neighboring neurons</b>. Connections in the brain are physically limited and sparse.</p>
+
+<p class="inter-small"><b>Graph-Based AI (GNN):</b> A graph neural network does exactly the same thing as the brain. A node (activation) sends signals (Message Passing) <b>only to its immediate neighbors</b> along the graph edges. If a node has three connections, it interacts with only three nodes, completely ignoring the other millions of points in the network.</p>
+
+<p class="inter-small">As mentioned above, nodes can be deleted or added, new connections can be created, and the graph can be restructured on the fly. This is fundamentally similar to the brain's <b>neuroplasticity</b>, in which old synapses physically die off and new ones grow during learning. A Transformer contains a rigid, static matrix of weights that does not change its structure during operation (inference) — only the numbers passing through it change.</p>
+<br>
+<p class="inter-medium">5. Training GNNs, MLGNNs, and Transformers</p>
+
+<p class="inter-small">Creating a <b>Knowledge Graph</b> requires extremely labor-intensive work: extracting entities from documents and identifying their relationships. This task is generally performed by a Transformer (LLM), since its scale is too large for a human to handle. The Transformer has to process the materials repeatedly to extract relationships, making data indexing extremely expensive. GNNs then operate on the basis of this graph.</p>
+
+<p class="inter-small">The costs of training an MLGNN are even higher, since properties and connections between properties are added to the graph elements. In our tests, Transformers performed reasonably well when constructing a graph for a GNN, but began to get confused when building the more complex MLGNN graph architecture. Humans undergo basic learning over several years; high-quality training of an MLGNN or another AGI architecture may require prolonged, painstaking work by people to enter and verify knowledge.</p>
+
+<p class="inter-small">Training <b>Transformers</b> themselves, by contrast, can be simplified to providing any structured or unstructured information. The model memorizes statistical patterns and then reproduces them. However, this comes with well-known drawbacks in the form of errors and hallucinations. This is very similar to <b>lossy video or audio compression</b>: data is packed as compactly as possible, but when reproducing it, the AI begins to "fill in" details of its own.</p>
+
+<p class="inter-small">Our project does not have the resources required to fully train Reazonex as AGI, so we decided to integrate it into an AI proxy, which will become part of the Dailogix client application. This will provide users with higher speed, lower LLM token costs, greater response accuracy, and additional security. Reazonex will learn from the information transmitted through it by LLMs and users.</p>
+<br>
+<p class="inter-medium">6. What About <b>GraphRAG?</b></p>
+
+<p class="inter-small">GraphRAG does not change the model's "brain" (weights). It is an external layer built on top of a Transformer. When an LLM begins generating its final response, it remains the same statistical machine prone to hallucinations. When you ask a question, the system finds the relevant facts in the graph and roughly "shoves" them into the model's prompt. However, the LLM itself performs the text generation (inference). It reads this prompt and begins predicting tokens based on its <i>internal weights</i>.</p>
+
+<p class="inter-small">GraphRAG solves the problem of <i>delivering the right knowledge to the model</i> (retrieval), but it is fundamentally incapable of changing the nature of the LLM itself as a probabilistic text generator. Our Reazonex concept is different: the reasoning process and the drawing of conclusions should take place through graph operations, while the LLM is responsible only for expressing the resulting conclusions in a form more familiar to humans. By the way, here is an article featuring a simple logical test:<a href="https://projgasi.github.io/articles.html#aicomp" target="_blank">How Popular AI Models Reason vs Graph-Based Reasoners</a></p>
+<br>
+<p class="inter-medium">7. Is Reazonex a Commercial Product or Freely Distributed?</p>
+
+<p class="inter-small">At present, our project has not received any donations. All research, development, and testing are carried out using our own funds. If we were operating on donations, Reazonex would be an open product and would probably develop faster by attracting additional specialists. If we were working with investment funding, we would transfer the rights to Reazonex to the investor. In our current situation, we see Reazonex as a commercial product.</p>
+
+<p class="inter-small">Unfortunately, despite our presence on the internet, the algorithms of various platforms are more inclined to bring people stories about the need to help homeless animals and similar causes than to highlight the global need to make AI better and safer and, together with it, improve the future of humanity.</p>
+
+<br>
+<p class="inter-small">
+    <a href="https://projgasi.github.io/index.html#support" target="_blank">Support the project</a> — and help build a safe future.
+  </p><br>
+
+
+  <p class="inter-small">
+    Published: October 17, 2026
+  </p>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="card" id="phase3">
 
+
+
+<p class="inter-large">Dailogix: Phase 3 Completed. A New Vision for the Reazonex-Based Client Application</p>
 <div style="display:flex; gap:10px; margin:10px 0;">
 
     <img
       src="images/Dailogixproxy.jpg"
-      alt="When AI Starts Hiding Its Thoughts"
+      alt="Dailogix"
       style="width:90%;">
 
   </div>
 
-<p class="inter-large">Dailogix: Phase 3 Completed. A New Vision for the Reazonex-Based Client Application</p>
 <br>
 <p class="inter-small">We have completed another stage in the development of Dailogix — <b>Phase 3 — Client-Side Development</b>. At the same time, we have decided to change the future direction of client application development by integrating our AI proxy powered by Reazonex.</p>
 <br>
